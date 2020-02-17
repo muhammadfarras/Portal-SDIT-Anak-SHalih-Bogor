@@ -1,0 +1,166 @@
+body {
+  background-color: #E28E06;
+}
+.container {
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #515151;
+    width: 900px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+label {
+  font-weight: bold;
+  color: white;
+}
+
+.detail {
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #515151;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    width: 600px;
+    padding-bottom: 20px; 
+    
+}
+
+
+
+h2 {
+  text-align : center;
+  text-decoration: underline overline;
+
+}
+.biodata {
+  padding: 10px;
+  color: white;
+}
+.biodata th {
+  position: sticky;
+  text-align: left;
+  font-size: 24px;
+  text-decoration: underline;
+}
+.biodata td {
+    padding: 10px;
+    text-align: justify;
+}
+
+.biodata td:first-child {
+  width: 150px;
+}
+
+.biodata td.collspan {
+    text-align: center;
+  }
+
+.not-allowed {
+    cursor: not-allowed;
+}
+
+.back {
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    background-color: #262626;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#print {
+  float: right;
+}
+
+.back:hover {
+    text-decoration: none;
+    color: white;
+    transform: rotate(-4deg);
+}
+
+.error {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 240px;
+    color: red;
+}
+
+.errorpage {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  font-style: italic;
+  text-decoration: underline;
+  text-shadow: 5px 7px 10px #3D3D3D  ;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .container {
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 300px;
+    margin-top: 10px;
+  }
+  label {
+    font-size: 10px;
+    margin-left: 5px;
+  }
+  
+  .detail {
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 300px;
+    margin-top: 10px;  
+  }
+  
+  .biodata td {
+    font-size: 8px;
+  }
+  .biodata td:first-child {
+    width: 80px;
+  }
+  
+  .biodata table {
+    width: 100%;
+  }
+ 
+  #print {
+    margin-left: 5px;
+    display: inline;
+    float: left;
+  }
+  .error {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 200px;
+        color: red;
+    }
+    
+    .errorpage {
+      font-size: 20px;
+    }
+    
+    em.update {
+      font-size: 8px;
+    }
+    
+    footer {
+      margin-left: 5px;
+    }
+}

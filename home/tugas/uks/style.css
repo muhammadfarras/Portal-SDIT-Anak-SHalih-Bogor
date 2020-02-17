@@ -1,0 +1,156 @@
+body {
+  background-color: #FFFFFF;
+}
+.container {
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #515151;
+    width: 600px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+
+.detail {
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #E0E0E0;
+    border-radius: 5px;
+    width: 600px;
+    padding-bottom: 20px; 
+    
+}
+
+form {
+    text-align: center;
+}
+
+input[type=text]{
+  background-color: #515151;
+    margin: 0 auto;
+    font-size: 10px;
+    border: none;
+    width: 200px;
+    border-bottom: 2px solid #D3D3D3;
+    padding: 10px;
+    color: white;
+    font-weight: 900;
+}
+input[type=text]:hover {
+    border-bottom: 2px solid #333333;
+}
+input[type=text]:focus {
+    border-bottom: 2px solid #333333;
+}
+
+input[type=submit]{
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+}
+
+input[type=submit]:hover{
+    transform: rotate( 10deg );
+}
+
+h2 {
+  margin-top: 9px;
+  text-align : center;
+  text-decoration: underline overline;
+
+}
+table {
+    margin: 0 auto;
+}
+
+td {
+    padding: 10px;
+}
+
+td.collspan {
+    text-align: center;
+}
+
+.not-allowed {
+    cursor: not-allowed;
+}
+
+.back {
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    background-color: #262626;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+.back:hover {
+    transform: rotate(-4deg);
+    text-decoration: none;
+    color: white;
+}
+
+.error {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 240px;
+    color: red;
+}
+
+.errorpage {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  font-style: italic;
+  text-decoration: underline;
+  text-shadow: 5px 7px 10px #3D3D3D  ;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .container {
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 300px;
+    margin-top: 10px;
+  }
+  .detail {
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 300px;
+    margin-top: 10px;  
+    
+  }
+  
+  .back {
+    font-size: 8px;
+  }
+  
+  .error {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 200px;
+        color: red;
+    }
+    
+  .errorpage {
+    font-size: 20px;
+  } 
+}

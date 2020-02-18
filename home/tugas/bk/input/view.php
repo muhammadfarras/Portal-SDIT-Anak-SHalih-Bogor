@@ -10,8 +10,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body id="body">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,7 +30,7 @@
       </div>
     </nav>
     
-    <div class="container bg-light mt-5 p-4">
+    <div class="container bg-light mt-5 mb-5 p-4">
       
       <table class="biodata">
         <tr>
@@ -62,41 +60,113 @@
           <td>Alamat</td>
           <td> : <?php echo $biodata ['alamat']?></td>
         </tr>
-      </table>
+      </table>      
+      
       <hr>
       <form class="mt-3">
-        <div class="form-group font-weight-bold">
-          <label for="for-waktu">Waktu Pemeriksaan</label>
-          <input name="waktu" id="datepicker" type="text" width=200 class="form-control" id="for-waktu" autocomplete="off" required>
-        </div>
-        <div class="form-group font-weight-bold">
-          <label for="exampleFormControlTextarea1">Kemampuan Membaca</label>
+        <div class="form-group font-weight-bold mb-5">
+          <label for="exampleFormControlTextarea1" class="h4">Koognitif</label>
+          <p class="text-muted">Dapat dijelaskan melalui narasi berdasarkan kemampuan calistung dan pemahaman dalam intruksi</p>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          
+          <!--Ini history terakhir pencatatan -->
+            <div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
+              <p class="h6 pl-2">15 Februari 2020</p>
+              <p class="h6 pl-2"><small>Bla bla bla bla bla.</small></p>
+              <div class="card-footer text-muted">
+                <small class="text-muted">Dicatat oleh Fulan Bin Fulan</small>
+              </div>
+            </div>
+            <a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>
+          
         </div>
-        <div class="form-group font-weight-bold">
-          <label for="exampleFormControlTextarea1">Kemampuan Menulis</label>
+        
+        <div class="form-group font-weight-bold mb-5">
+          <label for="exampleFormControlTextarea1" class="h4">Sosial</label>
+          <p>
+            <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan hubungan dengan teman, tanggung jawab sosial, peran dalam kelompok</small>
+          </p>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          
+          <!--Ini history terakhir pencatatan -->
+            <div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
+              <p class="h6 pl-2">15 Februari 2020</p>
+              <p class="h6 pl-2"><small>Bla bla bla bla bla.</small></p>
+              <div class="card-footer text-muted">
+                <small class="text-muted">Dicatat oleh Fulan Bin Fulan</small>
+              </div>
+            </div>
+            <a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>
+            
         </div>
-        <div class="form-group font-weight-bold">
-          <label for="exampleFormControlTextarea1">Kemampuan Berhitung</label>
+        
+        <div class="form-group font-weight-bold mb-5">
+          <label for="exampleFormControlTextarea1" class="h4">Emosi</label>
+          <p>
+            <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan pengendalian emosi dan penyesuaian diri</small>
+          </p>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          
+          <!--Ini history terakhir pencatatan -->
+            <div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
+              <p class="h6 pl-2">15 Februari 2020</p>
+              <p class="h6 pl-2"><small>Bla bla bla bla bla.</small></p>
+              <div class="card-footer text-muted">
+                <small class="text-muted">Dicatat oleh Fulan Bin Fulan</small>
+              </div>
+            </div>
+            <a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>
+            
+            
         </div>
-        <div class="form-group font-weight-bold">
-          <label for="exampleFormControlTextarea1">Pehaman Pola Pikir</label>
+        
+        <div class="form-group font-weight-bold mb-5">
+          <label for="exampleFormControlTextarea1" class="h4">Wawasan Pengetahuan</label>
+          <p>
+            <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan adab menuntut ilmu, adab terhadap guru, siswa lain, tamu dsb</small>
+          </p>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          
+          <!--Ini history terakhir pencatatan -->
+            <div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
+              <p class="h6 pl-2">15 Februari 2020</p>
+              <p class="h6 pl-2"><small>Bla bla bla bla bla.</small></p>
+              <div class="card-footer text-muted">
+                <small class="text-muted">Dicatat oleh Fulan Bin Fulan</small>
+              </div>
+            </div>
+            <a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>
+            
+            
         </div>
-        <div class="form-group font-weight-bold">
-          <label for="exampleFormControlTextarea1">Wawasan Pengetahuan</label>
+        
+        <div class="form-group font-weight-bold mb-5">
+          <label for="exampleFormControlTextarea1" class="h4">Bahasa/Interaksi-Komunikasi</label>
+          <p>
+            <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan perkembangan interaksi dan komunikasi, penggunaan bahasa, pemahaman dalam berkomunikasi dll</small>
+          </p>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          
+          <!--Ini history terakhir pencatatan -->
+            <div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
+              <p class="h6 pl-2">15 Februari 2020</p>
+              <p class="h6 pl-2"><small>Bla bla bla bla bla.</small></p>
+              <div class="card-footer text-muted">
+                <small class="text-muted">Dicatat oleh Fulan Bin Fulan</small>
+              </div>
+            </div>
+            <a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>
+            
+            
         </div>
-        <button type="button" class="btn btn-outline-secondary">Catat</button>
+        
+        <button type="button" class="btn btn-outline-secondary w-50">Catat</button>
       </form>
     </div>
-    
     <script>
-      $('#datepicker').datepicker({
-          uiLibrary: 'bootstrap4'
-      });
+      $('.carousel').carousel({
+          interval: false
+      }); 
     </script>
   </body>
 </html>

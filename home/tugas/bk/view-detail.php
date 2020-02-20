@@ -10,22 +10,22 @@
                 <a class="btn btn-success btn-lg btn-block" href="input/?nis=<?php echo $data['nis']; ?>">Karakteristik Perkembangan</a>
               </div>
               <div class="col">
-                <a class="btn btn-success btn-lg btn-block" href="input/?nis=<?php echo $data['nis']; ?>">Kognitif</a>
+                <a class="btn btn-success btn-lg btn-block" href="input-1/?nis=<?php echo $data['nis']; ?>">Prestasi Kademik</a>
               </div>
               <div class="col">
-                <a class="btn btn-success btn-lg btn-block" href="input/?nis=<?php echo $data['nis']; ?>">Kognitif</a>
+                <a class="btn btn-success btn-lg btn-block" href="input-2/?nis=<?php echo $data['nis']; ?>">Bakat & Minat</a>
               </div>
             </div>
             
             <div class="row mt-3">
               <div class="col">
-                <a class="btn btn-success btn-lg btn-block" href="input-1/?nis=<?php echo $data['nis']; ?>">Sosial</a>
+                <a class="btn btn-success btn-lg btn-block" href="input-3/?nis=<?php echo $data['nis']; ?>">Motivasi Belajar</a>
               </div>
               <div class="col">
-                <a class="btn btn-success btn-lg btn-block" href="input/?nis=<?php echo $data['nis']; ?>">Kognitif</a>
+                <a class="btn btn-success btn-lg btn-block" href="input-4/?nis=<?php echo $data['nis']; ?>">Latar Belakang Keluarga</a>
               </div>
               <div class="col">
-                <a class="btn btn-success btn-lg btn-block" href="input/?nis=<?php echo $data['nis']; ?>">Kognitif</a>
+                <a class="btn btn-success btn-lg btn-block" href="input-5/?nis=<?php echo $data['nis']; ?>">Catatan Anekdot</a>
               </div>
             </div>
           </div>

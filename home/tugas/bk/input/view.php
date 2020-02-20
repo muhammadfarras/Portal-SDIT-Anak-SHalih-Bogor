@@ -26,6 +26,21 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">Karakter Perkembangan<span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../input-1/?nis=<?php echo $biodata['nis'];?>">Prestasi Akademik<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../input-2/?nis=<?php echo $biodata['nis'];?>">Bakat & Minat<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../input-3/?nis=<?php echo $biodata['nis'];?>">Motivasi Belajar<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../input-4/?nis=<?php echo $biodata['nis'];?>">Latar Belakang Keluarga<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../input-5/?nis=<?php echo $biodata['nis'];?>">Catatan Anekdot<span class="sr-only">(current)</span></a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -71,13 +86,13 @@
           
           <!--Ini history terakhir pencatatan -->
           <?php
-          $kognitif = getInformasiBk ($biodata['nis'],0);
+          $kognitif = getInformasiBk ($biodata['nis'],1,0);
           if ($kognitif->num_rows > 0 ){
               while ($result = mysqli_fetch_assoc ($kognitif)){
                 $petugas = mysqli_fetch_assoc (getEmployeByid($result['petugas']));
                 
                 echo  '<div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
-                  <p class="h6 pl-2">'.setGoodDate($result['waktu']).'</p>
+                  <p class="h6 pl-2">'.' kelas '.$result['kelas'].'. Pada '.setGoodDate($result['waktu']).'</p>
                   <p class="h6 pl-2 mr-2"><small>'.$result['keterangan'].'</small></p>
                   <div class="card-footer text-muted">
                     <small class="text-muted">Dicatat '.$petugas['nama_depan'].' '.$petugas['nama_belakang'].'</small>
@@ -99,13 +114,13 @@
           
           <!--Ini history terakhir pencatatan -->
             <?php
-              $kognitif = getInformasiBk ($biodata['nis'],1);
+              $kognitif = getInformasiBk ($biodata['nis'],1,1);
               if ($kognitif->num_rows > 0 ){
                   while ($result = mysqli_fetch_assoc ($kognitif)){
                     $petugas = mysqli_fetch_assoc (getEmployeByid($result['petugas']));
                     
                     echo  '<div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
-                      <p class="h6 pl-2">'.setGoodDate($result['waktu']).'</p>
+                      <p class="h6 pl-2">'.' kelas '.$result['kelas'].'. Pada '.setGoodDate($result['waktu']).'</p>
                       <p class="h6 pl-2 mr-2"><small>'.$result['keterangan'].'</small></p>
                       <div class="card-footer text-muted">
                         <small class="text-muted">Dicatat '.$petugas['nama_depan'].' '.$petugas['nama_belakang'].'</small>
@@ -127,13 +142,13 @@
           
           <!--Ini history terakhir pencatatan -->
             <?php
-              $kognitif = getInformasiBk ($biodata['nis'],2);
+              $kognitif = getInformasiBk ($biodata['nis'],1,2);
               if ($kognitif->num_rows > 0 ){
                   while ($result = mysqli_fetch_assoc ($kognitif)){
                     $petugas = mysqli_fetch_assoc (getEmployeByid($result['petugas']));
                     
                     echo  '<div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
-                      <p class="h6 pl-2">'.setGoodDate($result['waktu']).'</p>
+                      <p class="h6 pl-2">'.' kelas '.$result['kelas'].'. Pada '.setGoodDate($result['waktu']).'</p>
                       <p class="h6 pl-2 mr-2"><small>'.$result['keterangan'].'</small></p>
                       <div class="card-footer text-muted">
                         <small class="text-muted">Dicatat '.$petugas['nama_depan'].' '.$petugas['nama_belakang'].'</small>
@@ -155,13 +170,13 @@
           
           <!--Ini history terakhir pencatatan -->
           <?php
-            $kognitif = getInformasiBk ($biodata['nis'],3);
+            $kognitif = getInformasiBk ($biodata['nis'],1,3);
             if ($kognitif->num_rows > 0 ){
                 while ($result = mysqli_fetch_assoc ($kognitif)){
                   $petugas = mysqli_fetch_assoc (getEmployeByid($result['petugas']));
                   
                   echo  '<div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
-                    <p class="h6 pl-2">'.setGoodDate($result['waktu']).'</p>
+                    <p class="h6 pl-2">'.' kelas '.$result['kelas'].'. Pada '.setGoodDate($result['waktu']).'</p>
                     <p class="h6 pl-2 mr-2"><small>'.$result['keterangan'].'</small></p>
                     <div class="card-footer text-muted">
                       <small class="text-muted">Dicatat '.$petugas['nama_depan'].' '.$petugas['nama_belakang'].'</small>
@@ -183,13 +198,13 @@
           
           <!--Ini history terakhir pencatatan -->
           <?php
-            $kognitif = getInformasiBk ($biodata['nis'],4);
+            $kognitif = getInformasiBk ($biodata['nis'],1,4);
             if ($kognitif->num_rows > 0 ){
                 while ($result = mysqli_fetch_assoc ($kognitif)){
                   $petugas = mysqli_fetch_assoc (getEmployeByid($result['petugas']));
                   
                   echo  '<div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
-                    <p class="h6 pl-2">'.setGoodDate($result['waktu']).'</p>
+                    <p class="h6 pl-2">'.' kelas '.$result['kelas'].'. Pada '.setGoodDate($result['waktu']).'</p>
                     <p class="h6 pl-2 mr-2"><small>'.$result['keterangan'].'</small></p>
                     <div class="card-footer text-muted">
                       <small class="text-muted">Dicatat '.$petugas['nama_depan'].' '.$petugas['nama_belakang'].'</small>

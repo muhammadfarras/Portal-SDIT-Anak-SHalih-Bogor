@@ -22,7 +22,7 @@ include_once ("load.php");
 
 // Validasi
 class Validasi{
-    public $asked = ["kognitif","sosial","emosi","wawasan_pengetahuan","bahasa"];
+    public $asked = ["latar_belakang_keluarga"];
     public $countAsked;
     public $arrays;
     public $key;
@@ -38,15 +38,10 @@ class Validasi{
         $result = false;
         $data = $this->arrays;
         $asked = $this->asked;
-        if (isset($data[$asked[0]])){
-            if (isset($data[$asked[1]])){
-                if (isset($data[$asked[2]])){
-                    if (isset($data[$asked[3]])){
-                        if (isset($data[$asked[4]])){
-                            $result = true;
-                        }
-                    }       
-                }
+        
+        for ($i = 0 ; $i < count ($asked) ; $i++){
+            if (isset($data[$asked[$i]])){
+                $result = true;
             }
         }
         
@@ -62,15 +57,9 @@ class Validasi{
         $result = false;
         $data = $this->arrays;
         $asked = $this->asked;
-        if (empty($data[$asked[0]])){
-            if (empty($data[$asked[1]])){
-                if (empty($data[$asked[2]])){
-                    if (empty($data[$asked[3]])){
-                        if (empty($data[$asked[4]])){
-                            $result = true;
-                        }
-                    }       
-                }
+        for ($i = 0 ; $i < count ($asked) ; $i++){
+            if (empty($data[$asked[$i]])){
+                $result = true;
             }
         }
         if ($result){
@@ -112,11 +101,11 @@ for ($i = 0 ; $i < $count ;$i++){
     if (!empty($data[$arrayKey[$i]])){
         
         // echo "key dari $arrayKey[$i] sama dengan index ".array_search ($arrayKey[$i],$arrayAsked)." ".$data[$arrayKey[$i]]."<br>";
-        $form_id = 1;
+        $form_id = 5;
         $query = "INSERT INTO bk_kar_perkembangan (nis,form_id,inf_id,kelas,keterangan,waktu,petugas) ";
         $query .= "VALUES ('$data[nis]',$form_id,'".array_search ($arrayKey[$i],$arrayAsked)."','".$kelas."','".$data[$arrayKey[$i]]."','$data[waktu]','$data[inputer]')"; 
         
-        //echo $query."<br>";
+        // echo $query."<br>";
         
         //Jalankan perintah sql
         $mysqli = mysqli_query ($connect,$query);

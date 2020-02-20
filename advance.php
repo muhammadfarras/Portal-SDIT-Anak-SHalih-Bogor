@@ -347,4 +347,26 @@ function getSiswaByNIs ($nis){
   return $mysqli;
   
 }
+
+function getKelasByNIs ($nis){
+  $connect = $GLOBALS['connect'];
+  $query = "SELECT * FROM base_data_kelas WHERE nis = '$nis'";
+  $mysqli = mysqli_query ($connect,$query);
+  
+  return $mysqli;
+  
+}
+
+/*
+     * menampilkan hasil catatan guru
+     * terhadapsiswa sesuai aspe
+     * membutuhkan dua buah argumen
+     * 1. Nis 2. informasi_id 3. Form_id
+    */
+    function getInformasiBk ($nis,$formId,$informasiId){
+        $connect = $GLOBALS['connect'];
+        $query = "SELECT * FROM bk_kar_perkembangan WHERE nis = '$nis' AND  inf_id = '$informasiId' AND form_id = '$formId' ORDER BY id_pencatatan DESC LIMIT 3";
+        $mysqli = mysqli_query ($connect,$query);
+        return $mysqli;
+    }
 ?>

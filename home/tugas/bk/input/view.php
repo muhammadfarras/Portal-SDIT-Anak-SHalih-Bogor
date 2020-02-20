@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Kognitif<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Karakter Perkembangan<span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
@@ -63,21 +63,30 @@
       </table>      
       
       <hr>
-      <form class="mt-3">
+      <form class="mt-3" action="insert/" method="post">
         <div class="form-group font-weight-bold mb-5">
-          <label for="exampleFormControlTextarea1" class="h4">Koognitif</label>
+          <label for="exampleFormControlTextarea1" class="h4">Kognitif</label>
           <p class="text-muted">Dapat dijelaskan melalui narasi berdasarkan kemampuan calistung dan pemahaman dalam intruksi</p>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea name="kognitif" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
-            <div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
-              <p class="h6 pl-2">15 Februari 2020</p>
-              <p class="h6 pl-2"><small>Bla bla bla bla bla.</small></p>
-              <div class="card-footer text-muted">
-                <small class="text-muted">Dicatat oleh Fulan Bin Fulan</small>
-              </div>
-            </div>
-            <a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>
+          <?php
+          $kognitif = getInformasiBk ($biodata['nis'],0);
+          if ($kognitif->num_rows > 0 ){
+              while ($result = mysqli_fetch_assoc ($kognitif)){
+                $petugas = mysqli_fetch_assoc (getEmployeByid($result['petugas']));
+                
+                echo  '<div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
+                  <p class="h6 pl-2">'.setGoodDate($result['waktu']).'</p>
+                  <p class="h6 pl-2 mr-2"><small>'.$result['keterangan'].'</small></p>
+                  <div class="card-footer text-muted">
+                    <small class="text-muted">Dicatat '.$petugas['nama_depan'].' '.$petugas['nama_belakang'].'</small>
+                  </div>
+                </div>';
+              }
+              echo '<a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>';
+          }
+          ?>
           
         </div>
         
@@ -86,17 +95,26 @@
           <p>
             <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan hubungan dengan teman, tanggung jawab sosial, peran dalam kelompok</small>
           </p>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea name="sosial" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
-            <div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
-              <p class="h6 pl-2">15 Februari 2020</p>
-              <p class="h6 pl-2"><small>Bla bla bla bla bla.</small></p>
-              <div class="card-footer text-muted">
-                <small class="text-muted">Dicatat oleh Fulan Bin Fulan</small>
-              </div>
-            </div>
-            <a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>
+            <?php
+              $kognitif = getInformasiBk ($biodata['nis'],1);
+              if ($kognitif->num_rows > 0 ){
+                  while ($result = mysqli_fetch_assoc ($kognitif)){
+                    $petugas = mysqli_fetch_assoc (getEmployeByid($result['petugas']));
+                    
+                    echo  '<div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
+                      <p class="h6 pl-2">'.setGoodDate($result['waktu']).'</p>
+                      <p class="h6 pl-2 mr-2"><small>'.$result['keterangan'].'</small></p>
+                      <div class="card-footer text-muted">
+                        <small class="text-muted">Dicatat '.$petugas['nama_depan'].' '.$petugas['nama_belakang'].'</small>
+                      </div>
+                    </div>';
+                  }
+                  echo '<a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>';
+              }
+            ?>
             
         </div>
         
@@ -105,39 +123,55 @@
           <p>
             <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan pengendalian emosi dan penyesuaian diri</small>
           </p>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea name="emosi" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
-            <div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
-              <p class="h6 pl-2">15 Februari 2020</p>
-              <p class="h6 pl-2"><small>Bla bla bla bla bla.</small></p>
-              <div class="card-footer text-muted">
-                <small class="text-muted">Dicatat oleh Fulan Bin Fulan</small>
-              </div>
-            </div>
-            <a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>
-            
-            
+            <?php
+              $kognitif = getInformasiBk ($biodata['nis'],2);
+              if ($kognitif->num_rows > 0 ){
+                  while ($result = mysqli_fetch_assoc ($kognitif)){
+                    $petugas = mysqli_fetch_assoc (getEmployeByid($result['petugas']));
+                    
+                    echo  '<div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
+                      <p class="h6 pl-2">'.setGoodDate($result['waktu']).'</p>
+                      <p class="h6 pl-2 mr-2"><small>'.$result['keterangan'].'</small></p>
+                      <div class="card-footer text-muted">
+                        <small class="text-muted">Dicatat '.$petugas['nama_depan'].' '.$petugas['nama_belakang'].'</small>
+                      </div>
+                    </div>';
+                  }
+                  echo '<a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>';
+              }
+            ?>
+
         </div>
         
         <div class="form-group font-weight-bold mb-5">
-          <label for="exampleFormControlTextarea1" class="h4">Wawasan Pengetahuan</label>
+          <label for="exampleFormControlTextarea1" class="h4">Adab & Akhlak</label>
           <p>
             <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan adab menuntut ilmu, adab terhadap guru, siswa lain, tamu dsb</small>
           </p>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea name="wawasan_pengetahuan" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
-            <div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
-              <p class="h6 pl-2">15 Februari 2020</p>
-              <p class="h6 pl-2"><small>Bla bla bla bla bla.</small></p>
-              <div class="card-footer text-muted">
-                <small class="text-muted">Dicatat oleh Fulan Bin Fulan</small>
-              </div>
-            </div>
-            <a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>
-            
-            
+          <?php
+            $kognitif = getInformasiBk ($biodata['nis'],3);
+            if ($kognitif->num_rows > 0 ){
+                while ($result = mysqli_fetch_assoc ($kognitif)){
+                  $petugas = mysqli_fetch_assoc (getEmployeByid($result['petugas']));
+                  
+                  echo  '<div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
+                    <p class="h6 pl-2">'.setGoodDate($result['waktu']).'</p>
+                    <p class="h6 pl-2 mr-2"><small>'.$result['keterangan'].'</small></p>
+                    <div class="card-footer text-muted">
+                      <small class="text-muted">Dicatat '.$petugas['nama_depan'].' '.$petugas['nama_belakang'].'</small>
+                    </div>
+                  </div>';
+                }
+                echo '<a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>';
+            }
+          ?>
+
         </div>
         
         <div class="form-group font-weight-bold mb-5">
@@ -145,28 +179,32 @@
           <p>
             <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan perkembangan interaksi dan komunikasi, penggunaan bahasa, pemahaman dalam berkomunikasi dll</small>
           </p>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea name="bahasa" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
-            <div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
-              <p class="h6 pl-2">15 Februari 2020</p>
-              <p class="h6 pl-2"><small>Bla bla bla bla bla.</small></p>
-              <div class="card-footer text-muted">
-                <small class="text-muted">Dicatat oleh Fulan Bin Fulan</small>
-              </div>
-            </div>
-            <a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>
-            
-            
+          <?php
+            $kognitif = getInformasiBk ($biodata['nis'],4);
+            if ($kognitif->num_rows > 0 ){
+                while ($result = mysqli_fetch_assoc ($kognitif)){
+                  $petugas = mysqli_fetch_assoc (getEmployeByid($result['petugas']));
+                  
+                  echo  '<div class="card ml-4 pt-2 mb-2 mt-2 w-75 alert-secondary">
+                    <p class="h6 pl-2">'.setGoodDate($result['waktu']).'</p>
+                    <p class="h6 pl-2 mr-2"><small>'.$result['keterangan'].'</small></p>
+                    <div class="card-footer text-muted">
+                      <small class="text-muted">Dicatat '.$petugas['nama_depan'].' '.$petugas['nama_belakang'].'</small>
+                    </div>
+                  </div>';
+                }
+                echo '<a href="#" class="text-muted ml-4">Tekan untuk history lengkap</a>';
+            }
+          ?>
+ 
         </div>
-        
-        <button type="button" class="btn btn-outline-secondary w-50">Catat</button>
+        <input style="display: none;" type="text" value="<?php echo $biodata['nis'];?>" name="nis">
+        <input style="display: none;" type="text" value="<?php echo $_SERVER['REQUEST_URI']?>" name="url">
+        <input type="submit" class="btn btn-outline-secondary w-50 " value="catat">
       </form>
     </div>
-    <script>
-      $('.carousel').carousel({
-          interval: false
-      }); 
-    </script>
   </body>
 </html>

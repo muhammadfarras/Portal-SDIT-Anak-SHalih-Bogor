@@ -34,5 +34,18 @@
         return $mysqli;
     }
     
+    /*
+     * menampilkan hasil catatan guru
+     * terhadapsiswa sesuai aspe
+     * membutuhkan dua buah argumen
+     * 1. Nis 2. informasi_id
+    */
+    function getInformasiBk ($nis,$informasiId){
+        $connect = $GLOBALS['connect'];
+        $query = "SELECT * FROM bk_kar_perkembangan WHERE nis = '$nis' AND  inf_id = '$informasiId' ORDER BY id_pencatatan DESC LIMIT 3";
+        $mysqli = mysqli_query ($connect,$query);
+        return $mysqli;
+    }
+    
     
 ?>

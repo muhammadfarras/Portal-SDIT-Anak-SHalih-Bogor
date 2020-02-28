@@ -19,10 +19,10 @@
         updateHadir ($_POST['hadir']);
         
         if (mysqli_affected_rows ($connect)){
-            echo "<h3>daftar hadir terupdate, syukran</h3>";
+            echo "<h3 style=text-align:center class=mt-5>daftar hadir terupdate, syukran</h3>";
         }
         else {
-            echo "<h3>Peserta sudah hadir</h3>";
+            echo "<h3 style=text-align:center class=mt-5>Peserta sudah hadir</h3>";
         }
     }
     

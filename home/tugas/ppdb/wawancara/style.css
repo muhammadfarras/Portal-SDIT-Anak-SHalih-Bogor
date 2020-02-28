@@ -71,7 +71,7 @@ input[type=submit]{
 }
 
 input[type=submit]:hover{
-    transform: rotate( 10deg );
+    background-color: #ffffff;
 }
 
 h3 {
@@ -118,7 +118,7 @@ label {
 }
 
 label:hover {
-    transform: rotate(10deg);
+    background-color: #A3E2BE;
 }
 input[type=radio]{
     display: none;
@@ -167,6 +167,21 @@ input[type=number]{
     font-size: 40px;
     margin-top: 240px;
     color: red;
+}
+
+.time {
+  display: none;
+}
+
+.time-show {
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  background-color: #D6FFEA;
+  width: 300px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 600px) {

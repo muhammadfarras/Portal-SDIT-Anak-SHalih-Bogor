@@ -1,3 +1,9 @@
+<div class="time" id="time">
+  
+</div>
+<div class="time-show" id="time-show">
+  
+</div>
 <div class="detail" id="detail">
   <h3><?php echo $detail['nama_panjang'] ?></h3>
   <form action="" method="post">
@@ -449,8 +455,8 @@
       <tr>
         <td rowspan=4 class="partanyaan">
             <li>Kesan pesan terhadap sekolah ananda sebelumnya</li>
-            Bagaimana pendapat anda jika ada orangtua siswa ceroboh menyebarkan berita yang merugikan sekolah,
-            <li>kemudian sekolah memberikan sanksi terkait hal tersebut?</li>
+            <li>Bagaimana pendapat anda jika ada orangtua siswa ceroboh menyebarkan berita yang merugikan sekolah,
+            kemudian sekolah memberikan sanksi terkait hal tersebut?</li>
         </td>
         <td rowspan=4><textarea name="text-sebelas"></textarea>
       </tr>
@@ -459,7 +465,7 @@
           <label>
             <input type="radio" name="sebelas" value=3 required>
             <br>
-            (Infaq dan atau skill yang bisa dikontribusikan untuk sekolah)
+            Respone yang baik
           </label>
         </td>
         </td>
@@ -469,7 +475,7 @@
           <label>
             <input type="radio" name="sebelas" value=2>
             <br>
-              Befikir (kira-kira saya bisa ini)
+              Respone dengan jawaban formal
           </label>
         </td>
       </tr>
@@ -478,7 +484,7 @@
           <label>
             <input type="radio" name="sebelas" value=1>
             <br>
-              Tidak
+              Respone jelek / menyudutkan sekolah
           </label>
         </td>
       </tr>
@@ -488,12 +494,5 @@
       <tr><td colspan=3><input name="wawancara" type="submit"></td></tr>
     </table>
   </form>
-  <pre>
-  <?php
-    print_r ($biodata);
-    print_r ($result);
-    print_r ($detail);
-  ?>
-  </pre>
 </div>
 <script src="ajax.js"></script>

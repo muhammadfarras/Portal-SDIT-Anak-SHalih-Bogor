@@ -1,6 +1,7 @@
 <?php
 include ("modal.php");
 include ("view.php");
+
 if (!empty ($_POST['nama'])){
 
     $obj = getList ($_POST['nama']);

@@ -1,7 +1,61 @@
 <div class="container mt-5 mb-5">
     <div class="media">
       <div class="media-body">
-        <h5 class="mt-0"><?php echo $data['nama_siswa']?></h5>
+        <div class="row">
+            <div class="col-11"><h5 class="mt-0"><?php echo $data['nama_siswa']?></h5></div>
+            <div class="col-1">
+                <!--Modal to share-->
+                <i class="fa fa-bars" aria-hidden="true" data-toggle="modal" data-target="#target<?php echo $data['nis']?>"></i>
+                <div class="modal fade" id="target<?php echo $data['nis']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Bagikan rekam prilaku <?php echo ucwords(strtolower($data['nama_siswa']))?></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                                <div class="form-group" id="parent-list">
+                                    <label for="exampleFormControlSelect1">Tingkat Kelas</label>
+                                    <select class="form-control" id="list">
+                                      <?php
+                                        $currentTingkat = $kelas['tingkat'];
+                                        for ( $i = $currentTingkat ; $i > 0 ; $i--){
+                                            
+                                            if ($i == $currentTingkat){
+                                                echo "<option value=$i selected>".$i."</option>";
+                                            }
+                                            else {
+                                                echo "<option value=$i>".$i."</option>";
+                                            }
+                                            
+                                        }
+                                        
+                                      ?>
+                                    </select>
+                                    
+                                </div>
+                                
+                                <a href="output/?<?php echo "order=pdf&nis=$data[nis]&tingkat=$kelas[tingkat]"?>" class="list-group-item list-group-item-action">Download as PDF - <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                                <a href="output/?<?php echo "order=email&nis=$data[nis]&tingkat=$kelas[tingkat]"?>" class="list-group-item list-group-item-action">Send to email - <i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            
+                                <a href="#" class="list-group-item list-group-item-action disabled"><i class="fa fa-exclamation" aria-hidden="true"></i> Send to Whats App <small>on develop</small> - <i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                                
+ 
+                            <small class="text-muted">Setiap rekam prilaku yang dikirim tercatat nama pengirim dan target pengiriman, gunakan dengan bijak</small>
+                            
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
         <p>adalah siswa <?php ?> dengan nomor induk siswa <?php echo $data['nis'] ?>, kelas <?php echo $kelas['tingkat']."".$kelas['kelas']?>.</p>
         
         <div class="container">
@@ -26,13 +80,10 @@
               </div>
               <div class="col">
                 <a class="btn btn-success btn-lg btn-block" href="input-5/?nis=<?php echo $data['nis']; ?>">Catatan Anekdot</a>
-              </div>
+              </div>              
             </div>
           </div>
-            
-            
-            
-        
+
       </div>
     </div>
 </div>

@@ -369,4 +369,49 @@ function getKelasByNIs ($nis){
         $mysqli = mysqli_query ($connect,$query);
         return $mysqli;
     }
+    
+    class baseSiswa {
+      private $nis;
+      private $connection;
+      
+      public function __construct ($nis){
+        $this->nis = $nis;
+        $host = "localhost";
+        $username = "root";
+        $pass = "";
+        $dbname = "base";
+            
+        if (mysqli_connect ($host,$username,$pass,$dbname)){
+            $this->connection = mysqli_connect ($host,$username,$pass,$dbname);
+        }
+        else {
+            die ("Hubungi Muhammad Farras Ma'ruf berikan informasi berikut : <br>File : ".__FILE__."<br>Baris : ".__LINE__);
+        }
+
+      }
+      public function getBaseSiswa (){
+            $connect = $GLOBALS['connect'];
+            $query = "SELECT * FROM base_data_siswa WHERE nis = '$this->nis'";
+            $mysqli = mysqli_query ($connect,$query);
+            
+            return $mysqli;
+      }
+      
+      public function getKelasByNIs (){
+        $connect = $GLOBALS['connect'];
+        $query = "SELECT * FROM base_data_kelas WHERE nis = '$this->nis'";
+        $mysqli = mysqli_query ($connect,$query);
+        
+        return $mysqli;
+      }
+      
+      public function getInformasiBk ($formId,$informasiId,$kelas){
+        $connect = $GLOBALS['connect'];
+        $query = "SELECT * FROM bk_kar_perkembangan WHERE nis = '$this->nis' AND  inf_id = '$informasiId' AND form_id = '$formId' AND kelas LIKE '%$kelas%' ORDER BY id_pencatatan ASC";
+        $mysqli = mysqli_query ($connect,$query);
+        return $mysqli;
+      }
+      
+      
+    }
 ?>

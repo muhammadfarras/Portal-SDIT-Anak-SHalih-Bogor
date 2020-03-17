@@ -81,7 +81,7 @@
       <form class="mt-3" action="insert/" method="post">
         <div class="form-group font-weight-bold mb-5">
           <label for="latar_belakang_keluarga" class="h4">Latar Belakang Keluarga</label>
-          <p class="text-muted">Dapat dijelaskan melalui narasi dan angka berdasarkan pretasi akademik di tiap semester</p>
+          <p class="text-muted">Dapat dijelaskan melalui narasi berdasarkan hasil wawancara langsung dan hasil wawancara di awal masuk (PPDB)</p>
           <textarea name="latar_belakang_keluarga" class="form-control" id="latar_belakang_keluarga" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->

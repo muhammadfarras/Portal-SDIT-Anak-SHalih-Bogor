@@ -81,7 +81,7 @@
       <form class="mt-3" action="insert/" method="post">
         <div class="form-group font-weight-bold mb-5">
           <label for="catatan_anekdot" class="h4">Catatan Anekdot</label>
-          <p class="text-muted">Dapat dijelaskan melalui narasi dan angka berdasarkan pretasi akademik di tiap semester</p>
+          <p class="text-muted">Dapat dijelaskan melalui narasi berdasarkan kejadian insidental yang dialami siswa</p>
           <textarea name="catatan_anekdot" class="form-control" id="catatan_anekdot" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->

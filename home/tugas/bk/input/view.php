@@ -81,7 +81,7 @@
       <form class="mt-3" action="insert/" method="post">
         <div class="form-group font-weight-bold mb-5">
           <label for="exampleFormControlTextarea1" class="h4">Kognitif</label>
-          <p class="text-muted">Dapat dijelaskan melalui narasi berdasarkan kemampuan calistung dan pemahaman dalam intruksi</p>
+          <p class="text-muted">Dapat dijelaskan melalui narasi berdasarkan kemampuan calistung, kemampuan memori, tingkat atensi dan konsentrasi</p>
           <textarea name="kognitif" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
@@ -164,7 +164,7 @@
         <div class="form-group font-weight-bold mb-5">
           <label for="exampleFormControlTextarea1" class="h4">Adab & Akhlak</label>
           <p>
-            <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan adab menuntut ilmu, adab terhadap guru, siswa lain, tamu dsb</small>
+            <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan adab menuntut ilmu, akhlak terhadap orang lain, dll</small>
           </p>
           <textarea name="wawasan_pengetahuan" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           

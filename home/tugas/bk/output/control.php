@@ -19,9 +19,16 @@ if (!empty($_GET['nis']) && isset ($_GET['nis'])){
         $tingkat = $_GET['tingkat'];
         
         
-        
-        include ("view.php");
-        
+        switch ($_GET['order']){
+            case "pdf":
+                include ("view.php");
+                include ("pdf.php");
+                break;
+            
+            case "email":
+                include ("pdf-email.php");
+                break;
+        }
         
     }
     

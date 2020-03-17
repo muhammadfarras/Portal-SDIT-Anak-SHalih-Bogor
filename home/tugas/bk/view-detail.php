@@ -1,3 +1,4 @@
+
 <div class="container mt-5 mb-5">
     <div class="media">
       <div class="media-body">
@@ -16,7 +17,13 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                            
+                                
+                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label><span class="war sr-only ml-1 badge badge-secondary">Email Harus diisi</span>
+                                    <input type="email" class="alamat form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                
                                 <div class="form-group" id="parent-list">
                                     <label for="exampleFormControlSelect1">Tingkat Kelas</label>
                                     <select class="form-control" id="list">
@@ -25,10 +32,10 @@
                                         for ( $i = $currentTingkat ; $i > 0 ; $i--){
                                             
                                             if ($i == $currentTingkat){
-                                                echo "<option value=$i selected>".$i."</option>";
+                                                echo "<option value=$i selected>Kelas ".$i."</option>";
                                             }
                                             else {
-                                                echo "<option value=$i>".$i."</option>";
+                                                echo "<option value=$i>Kelas ".$i."</option>";
                                             }
                                             
                                         }
@@ -37,9 +44,9 @@
                                     </select>
                                     
                                 </div>
-                                
+                               
                                 <a href="output/?<?php echo "order=pdf&nis=$data[nis]&tingkat=$kelas[tingkat]"?>" class="list-group-item list-group-item-action">Download as PDF - <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
-                                <a href="output/?<?php echo "order=email&nis=$data[nis]&tingkat=$kelas[tingkat]"?>" class="list-group-item list-group-item-action">Send to email - <i class="fa fa-envelope" aria-hidden="true"></i></a>
+                                <a email="none" href="<?php echo "order=email&nis=$data[nis]&tingkat=$kelas[tingkat]"?>" class="email list-group-item list-group-item-action">Send to email - <i class="fa fa-envelope" aria-hidden="true"></i></a>
                             
                                 <a href="#" class="list-group-item list-group-item-action disabled"><i class="fa fa-exclamation" aria-hidden="true"></i> Send to Whats App <small>on develop</small> - <i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                                 

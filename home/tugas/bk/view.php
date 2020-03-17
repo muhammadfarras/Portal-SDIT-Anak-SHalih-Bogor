@@ -55,9 +55,19 @@
         blockquote em{
         font-style: italic;
         }
+        
+        .full {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
     </style>
 </head>
 <body id="body">
+    <img id="loading-page" src="img/loading.gif" class="sr-only">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="../../">
         <img src="img/3x3.png" alt="..." class="img" style="width: 2rem">

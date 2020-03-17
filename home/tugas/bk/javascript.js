@@ -20,16 +20,67 @@ window.addEventListener ("load",function (){
         
         pdfNode.setAttribute ("href",newhrefPdf);
         emailNode.setAttribute ("href",newhrefEmail);
-        
-        console.log (hrefPdf);
-        console.log (hrefEmail);
+
         
         
     }
     
     for (var i = 0 ; i < listNode.length ; i++){
         listNode[i].addEventListener ("change",click);
+    }
+    
+    
+    //  ajax send email
+    var buttonEmail = document.getElementsByClassName ("email");
+    var textEmail = document.getElementsByClassName ("alamat");
+    
+    function setEmail (e){
+        var emailNode = e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
 
+        emailNode.setAttribute("email",e.target.value);
+    }
+    
+    function callAjax (e){
+        e.preventDefault();
+        var href = (e.target.getAttribute("href"));
+        var alamat = (e.target.getAttribute("email"));
+        var warn = e.target.parentNode.childNodes[1].childNodes[2];
+        var loadingPage = document.getElementById ("loading-page");
+        
+        if (alamat == "none" || alamat==""){
+            
+            warn.classList.remove ("sr-only");
+        }
+        else {
+            // send email ajax
+            warn.classList.add ("sr-only");
+            
+            var request = new XMLHttpRequest ();
+            
+            if (request.responseText == ""){
+                loadingPage.classList.replace ("sr-only","full");
+
+            }
+            
+            request.open ("GET","output/pdf-email.php?"+href+"&alamat="+alamat);
+            request.send();
+            
+            request.onreadystatechange = function (){
+              if (request.readyState == 4 && request.status == 200){
+                loadingPage.classList.replace ("full","sr-only");
+                
+                window.alert (request.responseText);
+              }
+            };
+        } 
+    }
+    
+    for (i = 0 ; i < buttonEmail.length ; i++){
+        
+        buttonEmail[i].addEventListener ("click",callAjax);
+        textEmail[i].addEventListener ("keyup",setEmail);
+
+        
     }
     
     

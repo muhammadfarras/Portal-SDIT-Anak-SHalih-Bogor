@@ -1,20 +1,20 @@
 <?php
     ob_start();
-    $fileStroge = md5(md5(time()));
-    include ("qr.php");
-    if (isset ($_SERVER['HTTP_REFERER']) && !empty ($_SERVER['HTTP_REFERER'])){
-        $url = ($_SERVER['HTTP_REFERER']."qr-barcode?order=$fileStroge");
-            if (!file_exists ("imageqr/$fileStroge.png")){
-                    // Barcode Objet
-                    $qr = new QR_BarCode(); 
-                    $qr->url ($url);
-                    $qr->qrCode(500,'imageqr/'.$fileStroge.'.png');
-                }
-        
-    }
-    else {
-        header ("location: error.php");
-    }
+    //$fileStroge = md5(md5(time()));
+    //include ("qr.php");
+    //if (isset ($_SERVER['HTTP_REFERER']) && !empty ($_SERVER['HTTP_REFERER'])){
+    //    $url = ($_SERVER['HTTP_REFERER']."qr-barcode?order=$fileStroge");
+    //        if (!file_exists ("imageqr/$fileStroge.png")){
+    //                // Barcode Objet
+    //                $qr = new QR_BarCode(); 
+    //                $qr->url ($url);
+    //                $qr->qrCode(500,'imageqr/'.$fileStroge.'.png');
+    //            }
+    //    
+    //}
+    //else {
+    //    header ("location: error.php");
+    //}
 ?>
 <html>
 <head>
@@ -121,10 +121,10 @@
         td, th{
             padding: 10px;
         }
-        img {
+        /*img {
             width: 80px;
             float: left;
-        }
+        }*/
     </style>
 </head>
 <body id="body">
@@ -138,11 +138,11 @@
             <tr><td>Alamat</td><td><?php echo $data['alamat']?></td></tr>
             <tr><td>Kelas</td><td><?php echo $kelas['tingkat']."".$kelas['kelas']?></td></tr>
         </table>
-        <img class = "mt-3" src="<?php echo 'imageqr/'.$fileStroge.'.png'?>">
-        <p class="p-5">
+        <!--<img class = "mt-3" src="<?php echo 'imageqr/'.$fileStroge.'.png'?>">-->
+        <p class="p-3">
             
-            Scan barcode untuk mengunduh file soft
-            <br>
+            <!--Scan barcode untuk mengunduh file soft
+            <br>-->
             <small class="mt-3">Catatan rekam perilaku siswa ditulis melalui pengamatan secara langsung, angket guru dan catatan guru berdasarkan aspek-aspek dibawah ini:</small>
             <br>
             <em><small>Note: Catatan rekam perilaku ini dicata pada saat siswa berada di tingkat <?php echo $tingkat ?> </small></em>
@@ -161,6 +161,5 @@
         
     </div>
     
-    <p><body
 </body>
 </html>

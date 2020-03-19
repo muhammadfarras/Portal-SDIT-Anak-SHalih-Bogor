@@ -30,18 +30,32 @@
       </div>
     </nav>
   
-  
   <div class="container">
-    <form class="mt-5">
+    <h3 class="display-4 bg-light mt-2 text-muted text-center" id="time-wow">
+      Waktu server
+    </h3>
+    <form class="mt-2" id="absen">
       <label class="sr-only" for="inlineFormInputGroupUsername2">No induk siswa / no induk yayasan</label>
       <div class="input-group mb-2 mr-sm-2">
         <div class="input-group-prepend">
           <div class="input-group-text">NIS / NIY</div>
         </div>
-        <input name="input-ni" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username" autofocus>
+        <input name="input-ni" type="text" class="form-control" id="nis" placeholder="Username" autofocus="on" autocomplete="off">
       </div>
     </form>
+    
+    <div class="container">
+      <h3 class="text-muted text-center bg-info" id="info">halo</h3>
+    </div>
+    
+    <div class="container" id="daftar">
+      
+    </div>
+    
   </div>
-  <!--Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->
+  <?php
+    require ("daftar-hadir.php");
+  ?>
+<script src="javascript.js"></script>
 </body>
 </html>

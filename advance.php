@@ -10,11 +10,17 @@
  * ---------------------------------------------------
 */
 
+// create for object mysql
+$host = "localhost";
+$username = "root";
+$pass = "";
+$dbname = "base";
+
 function connectDb (){
-    $host = "localhost";
-    $username = "root";
-    $pass = "";
-    $dbname = "base";
+    $host = $GLOBALS['host'];
+    $username = $GLOBALS['username'];
+    $pass = $GLOBALS['pass'];
+    $dbname = $GLOBALS['dbname'];
     
     
     
@@ -412,6 +418,18 @@ function getKelasByNIs ($nis){
         return $mysqli;
       }
       
+      public function setAbsenPerpustakaan () {
+        $connect = $GLOBALS['connect'];
+      }
       
+      
+      public function getNama (){
+            $connect = $GLOBALS['connect'];
+            $query = "SELECT * FROM base_data_siswa WHERE nis = '$this->nis'";
+            $mysqli = mysqli_query ($connect,$query);
+            
+            $data = mysqli_fetch_assoc ($mysqli);
+            return $data['nama_siswa'];
+      }
     }
 ?>

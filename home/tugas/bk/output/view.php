@@ -1,6 +1,6 @@
 <?php
     ob_start();
-    //$fileStroge = md5(md5(time()));
+    $fileStroge = md5(md5(time()));
     //include ("qr.php");
     //if (isset ($_SERVER['HTTP_REFERER']) && !empty ($_SERVER['HTTP_REFERER'])){
     //    $url = ($_SERVER['HTTP_REFERER']."qr-barcode?order=$fileStroge");

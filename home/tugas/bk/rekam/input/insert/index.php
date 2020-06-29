@@ -9,6 +9,9 @@ if (empty ($_POST)){
     header ("location: ../");
 }
 $data = setGoodMysqli ($_POST);
+
+
+
 $data['waktu'] = date("Y-m-d", time());
 $data['inputer'] = $_COOKIE['id'];
 $siswa = getKelasByNIs ($data['nis']);
@@ -22,7 +25,7 @@ include_once ("load.php");
 
 // Validasi
 class Validasi{
-    public $asked = ["kognitif","sosial","emosi","wawasan_pengetahuan","bahasa"];
+    public $asked = ["kognitif","sosial","emosi","adabakhlak","bahasa"];
     public $countAsked;
     public $arrays;
     public $key;
@@ -34,6 +37,9 @@ class Validasi{
         $this->countArray = count($this->arrays);
     }
     
+    /*
+     * back to 
+    */
     public function ValidateArray () {
         $result = false;
         $data = $this->arrays;
@@ -65,20 +71,42 @@ class Validasi{
         if (empty($data[$asked[0]])){
             if (empty($data[$asked[1]])){
                 if (empty($data[$asked[2]])){
-                    if (empty($data[$asked[3]])){
+                    if (empty($data[$asked[3]])){ 
                         if (empty($data[$asked[4]])){
                             $result = true;
                         }
-                    }       
+                        else {
+                            $temp = str_replace ("|",", ",$data[$asked[4]]);
+                            $data[$asked[4]]= substr ($temp,0,strlen($temp)-2).".";
+                        }
+                    }
+                    else {
+                        $temp = str_replace ("|",", ",$data[$asked[3]]);
+                        $data[$asked[3]]= substr ($temp,0,strlen($temp)-2).".";
+                    }
+                }
+                else {
+                    $temp = str_replace ("|",", ",$data[$asked[2]]);
+                    $data[$asked[2]]= substr ($temp,0,strlen($temp)-2).".";
                 }
             }
+            else {
+                $temp = str_replace ("|",", ",$data[$asked[1]]);
+                $data[$asked[1]]= substr ($temp,0,strlen($temp)-2).".";
+            }
         }
+        else {
+            $temp = str_replace ("|",", ",$data[$asked[0]]);
+            $data[$asked[0]]= substr ($temp,0,strlen($temp)-2).".";
+        }
+        
+        return $data;
         if ($result){
             // Ada yang coba ngubah name di input filed
             header ("location: $data[url]");
             
         }
-        return $result;
+        
     }
     
     public function shiftArray () {
@@ -91,13 +119,16 @@ class Validasi{
     }
 }
 
+
+
+// Objeck data
 $obj = new Validasi($data);
 
 // Validasi array menghindari perubahan nama input
 $obj->ValidateArray();
 
 // Validasi array jika salah satu harus ada nilai
-$obj->OneOfThemEmpty();
+$dataValidate = $obj->OneOfThemEmpty();
 
 
 $arrayValue = $obj->arrays;
@@ -108,13 +139,16 @@ $count = count ($obj->shiftArray());
 
 $succsess = 0;
 $tampung = "";
+
+//echo "<pre>";
+//print_r ($dataValidate);
 for ($i = 0 ; $i < $count ;$i++){
-    if (!empty($data[$arrayKey[$i]])){
+    if (!empty($dataValidate[$arrayKey[$i]])){
         
-        // echo "key dari $arrayKey[$i] sama dengan index ".array_search ($arrayKey[$i],$arrayAsked)." ".$data[$arrayKey[$i]]."<br>";
+        // echo "key dari $arrayKey[$i] sama dengan index ".array_search ($arrayKey[$i],$arrayAsked)." ".$dataValidate[$arrayKey[$i]]."<br>";
         $form_id = 1;
         $query = "INSERT INTO bk_kar_perkembangan (nis,form_id,inf_id,kelas,keterangan,waktu,petugas) ";
-        $query .= "VALUES ('$data[nis]',$form_id,'".array_search ($arrayKey[$i],$arrayAsked)."','".$kelas."','".$data[$arrayKey[$i]]."','$data[waktu]','$data[inputer]')"; 
+        $query .= "VALUES ('$data[nis]',$form_id,'".array_search ($arrayKey[$i],$arrayAsked)."','".$kelas."','".$dataValidate[$arrayKey[$i]]."','$dataValidate[waktu]','$dataValidate[inputer]')"; 
         
         //echo $query."<br>";
         
@@ -134,6 +168,25 @@ for ($i = 0 ; $i < $count ;$i++){
 if ( $succsess >= 1 ) {
     header("Refresh:1; url= $data[url]");
 }
+else {
+    header("location:error.php");
+}
+
+
+/*
+ * w        w      w     T T T T T T  *   *   *    |
+ *  w     w  w    w           T        * * * *     |
+ *   w  w     w  w            T         * * *      |
+ *    w        w              T       *   *   *    |
+ *
+ *    =============== Lupa dengan kode sendiri ====================
+*/
+
+
+
+
+
+
 
 
 

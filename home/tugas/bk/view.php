@@ -40,13 +40,13 @@
           <h5 class="card-title">Catat Rekam Prilaku Siswa</h5>
            <a href="rekam/" class=""><small class="text-muted"><img class="card-img-top img-fluid w-25 float-left mr-2" src="img/record.png" alt="Card image cap"></small>
           <p class="card-text">
-            Mencatat seluruh aktivitas, prilaku, & kejadian siswa selama di dalam ataupun diluar kelas guna rekam jejak siswa selama bersekolah
+            Mencatat dan melihat seluruh aktivitas, prilaku, & kejadian siswa selama di dalam ataupun diluar kelas guna rekam jejak siswa selama bersekolah
             di SDIT Anak Shalih Bogor Islamic School
           </p>
           </a>
         </div>
       </div>
-      
+      <!--
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lihat Rekam Prilaku Siswa</h5>
@@ -56,7 +56,7 @@
           </p>
           </a>
         </div>
-      </div>
+      </div>-->
       
       
       

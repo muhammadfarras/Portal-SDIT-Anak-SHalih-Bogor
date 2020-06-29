@@ -78,21 +78,32 @@
       </table>      
       
       <hr>
-      <form class="mt-3" action="insert/" method="post">
+      <form id="form" class="mt-3" action="insert/" method="post">
         <div class="form-group font-weight-bold mb-5">
           <label for="exampleFormControlTextarea1" class="h4">Kognitif</label>
           <p class="text-muted">Dapat dijelaskan melalui narasi berdasarkan kemampuan calistung, kemampuan memori, tingkat atensi dan konsentrasi</p>
           <?php
-            $file = fopen ("../text/karakter/kognitif.txt","r");
-            $no = 1;
+          // APakah kelas atas atau bawah
+          if (6 < 4){
+            $file = fopen ("../text/Kelas Bawah/kognitif/kognitif.txt","r");
+          }
+          else {
+            $file = fopen ("../text/Kelas Atas/kognitif/kognitif.txt","r");
+          }
+            
+            $no = 0;
             while ( !feof ($file)){
+              $no++;
               $data = fgets ($file);
               if (strlen($data) > 0 ){
+                
+              // change new line to |
+              $dataShow = str_replace ("\r\n","|",$data);
               echo '
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <div class="form-check">
-                  <input kode=kognitif'.$no.' class="kognitif-box form-check-input" type="checkbox" value="'.$data.'" id="kognitif'.$no.'">
+                  <input kode=kognitif'.$no.' class="kognitif-box form-check-input" type="checkbox" value="'.$dataShow.'" id="kognitif'.$no.'">
                   
                 </div>
                 </div>
@@ -100,14 +111,23 @@
                     '.$data.'
                   </label>
               </div>
-              
               ';
-              }
-              $no++;
+              }              
             }
+            echo '
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="form-check">
+                    <input kode=kognitif'.$no.' class="kognitif-box form-check-input" type="checkbox" value="'.$data.'" id="kognitif'.$no.'">
+                  </div>
+                </div>
+                <label class="form-check-label w-75" for="kognitif'.$no.'">'."<input type=text class='form-control temp-text'>".'</label>
+              </div> 
+              ';
+              
             fclose ($file);
           ?>
-          <textarea name="kognitif" class="form-control" id="kognitif-input" rows="3"></textarea>
+          <textarea name="kognitif" id="kognitif-input" rows="3"></textarea><!--class="hide-form" -->
           
           <!--Ini history terakhir pencatatan -->
           <?php
@@ -130,12 +150,59 @@
           
         </div>
         
+        
+        
         <div class="form-group font-weight-bold mb-5">
           <label for="exampleFormControlTextarea1" class="h4">Sosial</label>
           <p>
             <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan hubungan dengan teman, tanggung jawab sosial, peran dalam kelompok</small>
           </p>
-          <textarea name="sosial" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <?php
+          // APakah kelas atas atau bawah
+          if (3 < 4){
+            $file = fopen ("../text/Kelas Bawah/sosial/sosial.txt","r");
+          }
+          else {
+            $file = fopen ("../text/Kelas Atas/sosial/sosial.txt","r");
+          }
+            
+            $no = 0;
+            while ( !feof ($file)){
+              $no++;
+              $data = fgets ($file);
+              if (strlen($data) > 0 ){
+                
+              // change new line to |
+              $dataShow = str_replace ("\r\n","|",$data);
+              echo '
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="form-check">
+                  <input kode=sosial'.$no.' class="sosial-box form-check-input" type="checkbox" value="'.$dataShow.'" id="sosial'.$no.'">
+                  
+                </div>
+                </div>
+                <label class="form-check-label" for="sosial'.$no.'">
+                    '.$data.'
+                  </label>
+              </div>
+              ';
+              }              
+            }
+            echo '
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="form-check">
+                    <input kode=sosial'.$no.' class="sosial-box form-check-input" type="checkbox" value="'.$data.'" id="sosial'.$no.'">
+                  </div>
+                </div>
+                <label class="form-check-label w-75" for="sosial'.$no.'">'."<input type=text class='form-control temp-text'>".'</label>
+              </div> 
+              ';
+              
+            fclose ($file);
+          ?>
+          <textarea name="sosial" class="form-control" id="sosial-input" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
             <?php
@@ -163,7 +230,52 @@
           <p>
             <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan pengendalian emosi dan penyesuaian diri</small>
           </p>
-          <textarea name="emosi" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <?php
+          // APakah kelas atas atau bawah
+          if (6 < 4){
+            $file = fopen ("../text/Kelas Bawah/emosi/emosi.txt","r");
+          }
+          else {
+            $file = fopen ("../text/Kelas Atas/emosi/emosi.txt","r");
+          }
+            
+            $no = 0;
+            while ( !feof ($file)){
+              $no++;
+              $data = fgets ($file);
+              if (strlen($data) > 0 ){
+                
+              // change new line to |
+              $dataShow = str_replace ("\r\n","|",$data);
+              echo '
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="form-check">
+                  <input kode=emosi'.$no.' class="emosi-box form-check-input" type="checkbox" value="'.$dataShow.'" id="emosi'.$no.'">
+                  
+                </div>
+                </div>
+                <label class="form-check-label" for="emosi'.$no.'">
+                    '.$data.'
+                  </label>
+              </div>
+              ';
+              }              
+            }
+            echo '
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="form-check">
+                    <input kode=emosi'.$no.' class="emosi-box form-check-input" type="checkbox" value="'.$data.'" id="emosi'.$no.'">
+                  </div>
+                </div>
+                <label class="form-check-label w-75" for="emosi'.$no.'">'."<input type=text class='form-control temp-text'>".'</label>
+              </div> 
+              ';
+              
+            fclose ($file);
+          ?>
+          <textarea name="emosi" class="form-control" id="emosi-input" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
             <?php
@@ -191,7 +303,52 @@
           <p>
             <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan adab menuntut ilmu, akhlak terhadap orang lain, dll</small>
           </p>
-          <textarea name="wawasan_pengetahuan" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <?php
+          // APakah kelas atas atau bawah
+          if (6 < 4){
+            $file = fopen ("../text/Kelas Bawah/Adab dan Akhlak/Adab dan Akhlak.txt","r");
+          }
+          else {
+            $file = fopen ("../text/Kelas Atas/Adab dan Akhlak/Adab dan Akhlak.txt","r");
+          }
+            
+            $no = 0;
+            while ( !feof ($file)){
+              $no++;
+              $data = fgets ($file);
+              if (strlen($data) > 0 ){
+                
+              // change new line to |
+              $dataShow = str_replace ("\r\n","|",$data);
+              echo '
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="form-check">
+                  <input kode=adabakhlak'.$no.' class="adabakhlak-box form-check-input" type="checkbox" value="'.$dataShow.'" id="adabakhlak'.$no.'">
+                  
+                </div>
+                </div>
+                <label class="form-check-label" for="adabakhlak'.$no.'">
+                    '.$data.'
+                  </label>
+              </div>
+              ';
+              }              
+            }
+            echo '
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="form-check">
+                    <input kode=adabakhlak'.$no.' class="adabakhlak-box form-check-input" type="checkbox" value="'.$data.'" id="adabakhlak'.$no.'">
+                  </div>
+                </div>
+                <label class="form-check-label w-75" for="adabakhlak'.$no.'">'."<input type=text class='form-control temp-text'>".'</label>
+              </div> 
+              ';
+              
+            fclose ($file);
+          ?>
+          <textarea name="adabakhlak" class="form-control" id="adabakhlak-input" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
           <?php
@@ -219,7 +376,52 @@
           <p>
             <small class="text-muted">Dapat dijelaskan melalui narasi berdasarkan perkembangan interaksi dan komunikasi, penggunaan bahasa, pemahaman dalam berkomunikasi dll</small>
           </p>
-          <textarea name="bahasa" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <?php
+          // APakah kelas atas atau bawah
+          if (6 < 4){
+            $file = fopen ("../text/Kelas Bawah/bahasan/Bahasa dan Interaksi.txt","r");
+          }
+          else {
+            $file = fopen ("../text/Kelas Atas/bahasa/Bahasa dan Interaksi.txt","r");
+          }
+            
+            $no = 0;
+            while ( !feof ($file)){
+              $no++;
+              $data = fgets ($file);
+              if (strlen($data) > 0 ){
+                
+              // change new line to |
+              $dataShow = str_replace ("\r\n","|",$data);
+              echo '
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="form-check">
+                  <input kode=bahasa'.$no.' class="bahasa-box form-check-input" type="checkbox" value="'.$dataShow.'" id="bahasa'.$no.'">
+                  
+                </div>
+                </div>
+                <label class="form-check-label" for="bahasa'.$no.'">
+                    '.$data.'
+                  </label>
+              </div>
+              ';
+              }              
+            }
+            echo '
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="form-check">
+                    <input kode=bahasa'.$no.' class="bahasa-box form-check-input" type="checkbox" value="'.$data.'" id="bahasa'.$no.'">
+                  </div>
+                </div>
+                <label class="form-check-label w-75" for="bahasa'.$no.'">'."<input type=text class='form-control temp-text'>".'</label>
+              </div> 
+              ';
+              
+            fclose ($file);
+          ?>
+          <textarea name="bahasa" class="form-control" id="bahasa-input" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
           <?php

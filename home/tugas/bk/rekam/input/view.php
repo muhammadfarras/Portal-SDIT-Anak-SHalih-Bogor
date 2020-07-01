@@ -127,7 +127,7 @@
               
             fclose ($file);
           ?>
-          <textarea name="kognitif" id="kognitif-input" rows="3"></textarea><!--class="hide-form" -->
+          <textarea name="kognitif" id="kognitif-input" class="hide-form" rows="3"></textarea> 
           
           <!--Ini history terakhir pencatatan -->
           <?php
@@ -202,7 +202,7 @@
               
             fclose ($file);
           ?>
-          <textarea name="sosial" class="form-control" id="sosial-input" rows="3"></textarea>
+          <textarea name="sosial" class="hide-form" id="sosial-input" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
             <?php
@@ -275,7 +275,7 @@
               
             fclose ($file);
           ?>
-          <textarea name="emosi" class="form-control" id="emosi-input" rows="3"></textarea>
+          <textarea name="emosi" class="hide-form" id="emosi-input" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
             <?php
@@ -348,7 +348,7 @@
               
             fclose ($file);
           ?>
-          <textarea name="adabakhlak" class="form-control" id="adabakhlak-input" rows="3"></textarea>
+          <textarea name="adabakhlak" class="hide-form" id="adabakhlak-input" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
           <?php
@@ -421,7 +421,7 @@
               
             fclose ($file);
           ?>
-          <textarea name="bahasa" class="form-control" id="bahasa-input" rows="3"></textarea>
+          <textarea name="bahasa" class="hide-form" id="bahasa-input" rows="3"></textarea>
           
           <!--Ini history terakhir pencatatan -->
           <?php

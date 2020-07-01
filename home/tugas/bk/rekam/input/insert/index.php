@@ -68,37 +68,59 @@ class Validasi{
         $result = false;
         $data = $this->arrays;
         $asked = $this->asked;
-        if (empty($data[$asked[0]])){
-            if (empty($data[$asked[1]])){
-                if (empty($data[$asked[2]])){
-                    if (empty($data[$asked[3]])){ 
-                        if (empty($data[$asked[4]])){
-                            $result = true;
-                        }
-                        else {
-                            $temp = str_replace ("|",", ",$data[$asked[4]]);
-                            $data[$asked[4]]= substr ($temp,0,strlen($temp)-2).".";
-                        }
-                    }
-                    else {
-                        $temp = str_replace ("|",", ",$data[$asked[3]]);
-                        $data[$asked[3]]= substr ($temp,0,strlen($temp)-2).".";
-                    }
-                }
-                else {
-                    $temp = str_replace ("|",", ",$data[$asked[2]]);
-                    $data[$asked[2]]= substr ($temp,0,strlen($temp)-2).".";
-                }
+        $tempArrayFinished = [];
+    
+    for ($i = 0 ; $i < count($asked) ; $i++){
+        
+        for ($j = $i ; $j < count($asked) ; $j++){
+            //echo $j."<br>";
+            if (empty($data[$asked[$j]])){
+                $result = true;
             }
             else {
-                $temp = str_replace ("|",", ",$data[$asked[1]]);
-                $data[$asked[1]]= substr ($temp,0,strlen($temp)-2).".";
+                
+                if ( (in_array ($j,$tempArrayFinished))){
+                    break;
+                }
+                array_push ($tempArrayFinished,$j);
+                $temp = str_replace ("|",", ",$data[$asked[$j]]);
+                $data[$asked[$j]]= substr ($temp,0,strlen($temp)-2).".";
             }
         }
-        else {
-            $temp = str_replace ("|",", ",$data[$asked[0]]);
-            $data[$asked[0]]= substr ($temp,0,strlen($temp)-2).".";
-        }
+        
+    }
+        //if (empty($data[$asked[0]])){
+        //    if (empty($data[$asked[1]])){
+        //        if (empty($data[$asked[2]])){
+        //            if (empty($data[$asked[3]])){ 
+        //                if (empty($data[$asked[4]])){
+        //                    $result = true;
+        //                }
+        //                else {
+        //                    $temp = str_replace ("|",", ",$data[$asked[4]]);
+        //                    $data[$asked[4]]= substr ($temp,0,strlen($temp)-2).".";
+        //                }
+        //            }
+        //            else {
+        //                $temp = str_replace ("|",", ",$data[$asked[3]]);
+        //                $data[$asked[3]]= substr ($temp,0,strlen($temp)-2).".";
+        //            }
+        //        }
+        //        else {
+        //            $temp = str_replace ("|",", ",$data[$asked[2]]);
+        //            $data[$asked[2]]= substr ($temp,0,strlen($temp)-2).".";
+        //        }
+        //    }
+        //    else {
+        //        $temp = str_replace ("|",", ",$data[$asked[1]]);
+        //        $data[$asked[1]]= substr ($temp,0,strlen($temp)-2).".";
+        //    }
+        //}
+        //else {
+        //    $temp = str_replace ("|",", ",$data[$asked[0]]);
+        //    $data[$asked[0]]= substr ($temp,0,strlen($temp)-2).".";
+        //    
+        //}
         
         return $data;
         if ($result){
@@ -150,13 +172,13 @@ for ($i = 0 ; $i < $count ;$i++){
         $query = "INSERT INTO bk_kar_perkembangan (nis,form_id,inf_id,kelas,keterangan,waktu,petugas) ";
         $query .= "VALUES ('$data[nis]',$form_id,'".array_search ($arrayKey[$i],$arrayAsked)."','".$kelas."','".$dataValidate[$arrayKey[$i]]."','$dataValidate[waktu]','$dataValidate[inputer]')"; 
         
-        //echo $query."<br>";
+        echo $query."<br>";
         
         //Jalankan perintah sql
         $mysqli = mysqli_query ($connect,$query);
         
         if (mysqli_error ($connect)){
-            header ("location: error.php");
+            //header ("location: error.php");
         }
         if (mysqli_affected_rows ($connect)){
             $succsess += 1;
@@ -166,10 +188,10 @@ for ($i = 0 ; $i < $count ;$i++){
     
 }
 if ( $succsess >= 1 ) {
-    header("Refresh:1; url= $data[url]");
+    //header("Refresh:1; url= $data[url]");
 }
 else {
-    header("location:error.php");
+    //header("location:error.php");
 }
 
 

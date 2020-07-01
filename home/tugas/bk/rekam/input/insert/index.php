@@ -178,7 +178,7 @@ for ($i = 0 ; $i < $count ;$i++){
         $mysqli = mysqli_query ($connect,$query);
         
         if (mysqli_error ($connect)){
-            //header ("location: error.php");
+            header ("location: error.php");
         }
         if (mysqli_affected_rows ($connect)){
             $succsess += 1;
@@ -188,10 +188,10 @@ for ($i = 0 ; $i < $count ;$i++){
     
 }
 if ( $succsess >= 1 ) {
-    //header("Refresh:1; url= $data[url]");
+    header("Refresh:1; url= $data[url]");
 }
 else {
-    //header("location:error.php");
+    header("location:error.php");
 }
 
 

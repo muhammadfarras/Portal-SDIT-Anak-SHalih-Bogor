@@ -84,7 +84,7 @@
           <p class="text-muted">Dapat dijelaskan melalui narasi berdasarkan kemampuan calistung, kemampuan memori, tingkat atensi dan konsentrasi</p>
           <?php
           // APakah kelas atas atau bawah
-          if (6 < 4){
+          if ($kelas ['tingkat'] < 4){
             $file = fopen ("../text/Kelas Bawah/kognitif/kognitif.txt","r");
           }
           else {
@@ -159,7 +159,7 @@
           </p>
           <?php
           // APakah kelas atas atau bawah
-          if (3 < 4){
+          if ($kelas ['tingkat'] < 4){
             $file = fopen ("../text/Kelas Bawah/sosial/sosial.txt","r");
           }
           else {
@@ -232,7 +232,7 @@
           </p>
           <?php
           // APakah kelas atas atau bawah
-          if (6 < 4){
+          if ($kelas ['tingkat'] < 4){
             $file = fopen ("../text/Kelas Bawah/emosi/emosi.txt","r");
           }
           else {
@@ -305,7 +305,7 @@
           </p>
           <?php
           // APakah kelas atas atau bawah
-          if (6 < 4){
+          if ($kelas ['tingkat'] < 4){
             $file = fopen ("../text/Kelas Bawah/Adab dan Akhlak/Adab dan Akhlak.txt","r");
           }
           else {
@@ -378,8 +378,8 @@
           </p>
           <?php
           // APakah kelas atas atau bawah
-          if (6 < 4){
-            $file = fopen ("../text/Kelas Bawah/bahasan/Bahasa dan Interaksi.txt","r");
+          if ($kelas ['tingkat'] < 4){
+            $file = fopen ("../text/Kelas Bawah/bahasa/Bahasa dan Interaksi.txt","r");
           }
           else {
             $file = fopen ("../text/Kelas Atas/bahasa/Bahasa dan Interaksi.txt","r");

@@ -12,8 +12,8 @@ ob_start();
 
 // create for object mysql
 $host = "localhost";
-$username = "root";
-$pass = "";
+$username = "farras";
+$pass = "farrasmuhammad";
 $dbname = "base";
 
 function connectDb (){

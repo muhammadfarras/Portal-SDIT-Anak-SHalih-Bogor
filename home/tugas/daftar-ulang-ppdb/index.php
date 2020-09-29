@@ -2,7 +2,7 @@
 
 require ("../../../advance.php");
 
-if (isJobDefined ($_COOKIE['id'],'Catat Rekam Prilaku')){
+if (isJobDefined ($_COOKIE['id'],'Daftar Ulang PPDB')){
     header ("location: error.php");
 }
 include ("control.php");

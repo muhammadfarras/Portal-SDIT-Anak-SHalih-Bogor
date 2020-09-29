@@ -172,7 +172,7 @@ for ($i = 0 ; $i < $count ;$i++){
         $query = "INSERT INTO bk_kar_perkembangan (nis,form_id,inf_id,kelas,keterangan,waktu,petugas) ";
         $query .= "VALUES ('$data[nis]',$form_id,'".array_search ($arrayKey[$i],$arrayAsked)."','".$kelas."','".$dataValidate[$arrayKey[$i]]."','$dataValidate[waktu]','$dataValidate[inputer]')"; 
         
-        echo $query."<br>";
+        //echo $query."<br>";
         
         //Jalankan perintah sql
         $mysqli = mysqli_query ($connect,$query);

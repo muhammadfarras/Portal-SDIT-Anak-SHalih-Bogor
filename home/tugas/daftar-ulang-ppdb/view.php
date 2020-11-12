@@ -52,7 +52,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Konfirmasi Data Orangtua Siswa</h5>
-           <a href="#" class=""><small class="text-muted"><img class="card-img-top img-fluid w-25 float-left mr-2" src="img/document.png" alt="Card image cap"></small>
+           <a href="konfirmasi-data/" class=""><small class="text-muted"><img class="card-img-top img-fluid w-25 float-left mr-2" src="img/document.png" alt="Card image cap"></small>
           <p class="card-text">
             Konfirmasi atas data calon siswa dan orangtua siswa, jika tidak ada kesalahan dalam penulisan nama atau informasi lainnya maka kirim melalui
             email bukti registrasi ulang siswa.

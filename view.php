@@ -11,13 +11,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+
+
+
+      var onloadCallback = function() {
+        console.log ("run call back");
+        grecaptcha.render('html_element', {
+          'sitekey' : '6Ld3iNcZAAAAAABbW27rpJJq1lmjLgbBDwnhpmsK',
+          'theme' : 'light',
+          'callback' : 'verifyCallback'
+        });
+      };
+
+
+    </script>
 </head>
 <body id="body">
   <div class="container p-5 mt-5 bg-light rounded">
     <h1 class="display-4 mt-5 mb-3">SDIT Anak Shalih Bogor</h1>
     <form action="" method="post">
         <div class="col-auto mt-3">
-          <span class="badge badge-pill badge-primary mb-2" id="warn-email" class="warn email"></span>
+          <!-- <span class="badge badge-pill badge-primary mb-2" id="warn-email" class="warn email"></span> -->
           <label class="sr-only" for="inlineFormInputGroup">Username</label>
           <div class="input-group mb-2">
             <div class="input-group-prepend">
@@ -26,9 +41,9 @@
             <input name="email" type="text" class="form-control" id="email" placeholder="Email" autocomplete="off">
           </div>
         </div>
- 
+
         <div class="col-auto mt-3">
-          <span class="badge badge-pill badge-primary mb-2" id="warn-password" class="warn password"></span>  
+          <!-- <span class="badge badge-pill badge-primary mb-2" id="warn-password" class="warn password"></span> -->
           <label class="sr-only" for="inlineFormInputGroup">Password</label>
           <div class="input-group mb-2">
             <div class="input-group-prepend">
@@ -38,18 +53,44 @@
           </div>
         </div>
       <div class="col-auto mt-3">
-        
+
+              <!-- Ini ada re captcha -->
+              <div id="html_element" class="mb-3"></div>
+
         <input class="btn btn-outline-success" name="submit" id="submit" type="submit" value="Login">
+
+
+
+<table class="table table-sm w-25 mt-2">
+  <tbody>
+    <tr><td><small class="text-muted">Email</small></td>
+      <td><span class="mb-2" id="warn-email" class="warn email"><?php echo "&#33;" ?></span></td>
+    </tr>
+
+    <tr><td><small class="text-muted">Password</small></td>
+      <td><span class="mb-2" id="warn-password" class="warn password"><?php echo "&#33;" ?></span></td>
+    </tr>
+    <tr><td><small class="text-muted">Validasi</small></td><td></td></tr>
+  </tbody>
+</table>
+
+
       </div>
       <div class="col-auto mt-3">
         <address>Berlum terdaftar ? <a id="daftar">Daftarkan email antum</a></address>
       </div>
-      
+
     </form>
   </div>
   <script src="javascript.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+  </script>
   <script>
-    isSubmitOk ();
+    var verifyCallback = function (getResponse){
+      capValidation (getResponse);
+    }
+    // isSubmitOk ();
     checkEmpty ();
     daftarEmail();
     isEmailRegistered ();

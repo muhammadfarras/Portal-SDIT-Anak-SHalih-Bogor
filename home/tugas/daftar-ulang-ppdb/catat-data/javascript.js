@@ -27,12 +27,49 @@ var btnSubmit = document.getElementById ("buttonSubmit");
 // Button di modal
 var btnSure = document.getElementById ("btnsure");
 
+// nodeToast
+var nodeToast = document.getElementById ("isiToast");
+
 function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function clearNode (){
+  inputNama.value = "";
+  inputNamaAyah.value = "";
+  inputemailayah.value = "";
+  inputHpAyah.value = "";
+  inputNamaIbu.value = "";
+  inputEmailIbu.value = "";
+  inputHpIbu.value = "";
+}
 
-function placeOnSpan () {
+
+function placeOnSpan (e) {
+
+  var attributeModal = document.createAttribute("data-toggle");
+  // Make sure the data is fill document
+  e.preventDefault();
+if (inputNama.value == "" || inputNamaAyah.value == "" || inputemailayah.value == "" || inputHpAyah.value == ""
+    || inputNamaIbu.value == "" || inputEmailIbu.value == "" || inputHpIbu.value == ""){
+      alert("Tidak boleh ada data yang kosong");
+
+      // check jika ada yang dihapus
+      if (btnSubmit.hasAttribute("data-toggle")){
+        btnSubmit.removeAttribute ("data-toggle");
+      }
+}
+else {
+  // add Atribute
+  //  data-toggle="modal"
+
+  attributeModal.value = "modal";
+
+  // masukan attribute kedalam nodeSubmit
+  btnSubmit.setAttributeNode (attributeModal);
+
+}
+
   spanNama.innerHTML = htmlEntities(inputNama.value);
   spanNamaAyah.innerHTML = htmlEntities(inputNamaAyah.value);
   spanemailayah.innerHTML = htmlEntities(inputemailayah.value);
@@ -44,17 +81,37 @@ function placeOnSpan () {
 
 function runAjax () {
 
-  var arr = [inputNamaAyah.value,inputemailayah.value,inputHpAyah.value,inputNamaIbu.value,inputEmailIbu.value,inputHpIbu.value];
+  var arr = [inputNama.value,inputNamaAyah.value,inputemailayah.value,inputHpAyah.value,inputNamaIbu.value,inputEmailIbu.value,inputHpIbu.value];
+  var namaUpdate = arr[0];
   arr = JSON.stringify (arr);
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      console.log (this.responseText);
+
+      if (this.responseText == "berhasil"){
+
+        // show toast
+        $(document).ready(function(){
+          $('.toast').toast('show');
+        });
+
+        // close modal
+       $('#exampleModal').modal('hide');
+
+       isiToast.innerHTML = "Alhamdulillah data an <b>"+namaUpdate+"</b> telah diupdate";
+
+       // Menghapus semua node
+        clearNode();
+
+
+      }
     }
   };
   xmlhttp.open("GET", "post.php?data=" + arr, true);
   xmlhttp.send();
 }
+
+
 
 
 

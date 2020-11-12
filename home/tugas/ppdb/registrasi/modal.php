@@ -1,13 +1,13 @@
-<?php    
+<?php
     /*
      * Memanggil nama peserta
     */
-    
+
     /* Variable untuk tahun pelajaran
      *-------------------------------
     */
-    $tp = "2020-2021"; // Tahun pelajaran
-    
+    $tp = "2021-2022"; // Tahun pelajaran
+
     /*
      *---------------------------
     */
@@ -18,7 +18,7 @@
         $mysqli = mysqli_query ($connect,$query);
         return $mysqli;
     }
-    
+
     /*
      * Get detail peserta
      * Agumen pertama adalah nomor peserta
@@ -26,11 +26,12 @@
     function getDetail ($namapeserta) {
         $connect = $GLOBALS['connect'];
         $tp = $GLOBALS['tp'];
+        $namapeserta = setGoodMysqliOne ($namapeserta);
         $query = "SELECT * FROM ppdb_peserta WHERE nama_panjang = '$namapeserta' AND tp = '$tp'";
         $mysqli = mysqli_query ($connect,$query);
         return $mysqli;
     }
-    
+
     /*
      * Update peserta hadir time stamp
      * click daftar maka dia hadir
@@ -44,6 +45,6 @@
         $mysqli = mysqli_query ($connect,$query);
         return $mysqli;
     }
-    
-    
+
+
 ?>

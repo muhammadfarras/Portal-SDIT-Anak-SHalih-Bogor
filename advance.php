@@ -21,9 +21,9 @@ function connectDb (){
     $username = $GLOBALS['username'];
     $pass = $GLOBALS['pass'];
     $dbname = $GLOBALS['dbname'];
-    
-    
-    
+
+
+
     if (mysqli_connect ($host,$username,$pass,$dbname)){
         return mysqli_connect ($host,$username,$pass,$dbname);
     }
@@ -59,10 +59,10 @@ function setGoodArrayAndGoodMysql ($array){
     $kode = $GLOBALS['kode'];
     $array =  array_values ($array);
     $array =  array_values ($array[0]);
-    
+
     foreach ($array as $val)
         $data[] = mysqli_real_escape_string ( $connect , htmlspecialchars ( htmlentities ( strip_tags (trim ( $val ) ) ) ) );
-    
+
     array_push ($data,$kode);
     return $data;
 }
@@ -77,23 +77,28 @@ function setGoodArrayAndGoodMysql ($array){
 */
 function isEmailRegistered ($email) {
   $connect = $GLOBALS['connect'];
-  
+
   $queryCheck = "SELECT * FROM user WHERE email = '$email'";
-  
+
   $mysqlQueryCheck = mysqli_query ($connect,$queryCheck);
-  
+
   if (!mysqli_affected_rows ($connect)){
-    
+
     // Save to database
-    
+
     return true;
-    
+
   }
   else {
-    
+
     echo false;
-    
+
   }
+}
+
+
+function isCaptchaTrue ($capcha){
+
 }
 
 /*
@@ -104,7 +109,7 @@ function getId ($email,$password) {
   $password = md5 ($password);
   $query = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
   $mysqli = mysqli_query ($connect,$query);
-  
+
   return mysqli_fetch_assoc ($mysqli);
 }
 
@@ -119,7 +124,7 @@ function getBiodataFromId () {
   $connect = $GLOBALS['connect'];
   $query = "SELECT * FROM biodata WHERE id = '$id'";
   $mysqli = mysqli_query ($connect,$query);
-  
+
   return mysqli_fetch_assoc ($mysqli);
 }
 
@@ -133,7 +138,7 @@ function getBiodataFromIdRaw () {
   $connect = $GLOBALS['connect'];
   $query = "SELECT * FROM biodata WHERE id = '$id'";
   $mysqli = mysqli_query ($connect,$query);
-  
+
   return $mysqli;
 }
 
@@ -143,7 +148,7 @@ function getJobFromId () {
   $query = "SELECT * FROM akses_tugas WHERE id = '$id'";
   $mysqli = mysqli_query ($connect,$query);
   return ($mysqli);
-  
+
 }
 
 /*
@@ -160,7 +165,7 @@ function getPathFromJob ($deskripsi){
     $mysqli = mysqli_query ($connect,$query);
     return $mysqli;
   }
-  
+
 }
 
 /*
@@ -184,20 +189,20 @@ function isEmailAndPasswordRegistered ($email,$password) {
   $connect = $GLOBALS['connect'];
   $password = md5 ($password);
   $queryCheck = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
-  
+
   $mysqlQueryCheck = mysqli_query ($connect,$queryCheck);
-  
+
   if (mysqli_affected_rows ($connect)){
-    
+
     // Save to database
-    
+
     return true;
-    
+
   }
   else {
-    
+
     echo false;
-    
+
   }
 }
 
@@ -208,16 +213,16 @@ function saveNewUser ($email,$password){
   $password = md5 ($password);
   $query = "INSERT INTO user (email,password) VALUES ('$email','$password')";
   $mysqlQuery = mysqli_query ($connect,$query);
-  
+
   if (!mysqli_affected_rows ($connect)){
 
     return true;
-    
+
   }
   else {
-    
+
     echo false;
-    
+
   }
 }
 
@@ -225,16 +230,16 @@ function saveNewBiodate ($depan,$belakang,$nohp,$email){
   $connect = $GLOBALS['connect'];
   $query = "INSERT INTO biodata (nama_depan,nama_belakang,no_hp,email) VALUES ('$depan','$belakang','$nohp','$email')";
   $mysqlQuery = mysqli_query ($connect,$query);
-  
+
   if (!mysqli_affected_rows ($connect)){
 
     return true;
-    
+
   }
   else {
-    
+
     echo false;
-    
+
   }
 }
 
@@ -249,16 +254,16 @@ function isJobDefined ($id,$jobName){
   $connect = $GLOBALS['connect'];
   $query = "SELECT * FROM akses_tugas WHERE id = '$id' AND deskripsi = '$jobName'";
   $mysqlQuery = mysqli_query ($connect,$query);
-  
+
     if (!mysqli_affected_rows ($connect)){
-  
+
       return true;
-      
+
     }
     else {
-      
+
       return false;
-      
+
   }
 }
 
@@ -274,11 +279,11 @@ function isJobDefined ($id,$jobName){
 function isFormValidNotEmpty ($method,$directory){
   $array_validasi = array_keys ($method);
   for ($i = 0 ; $i < count ($method) ; $i++ ) {
-    
+
     if (empty ($method[$array_validasi[$i]])){
       header ($directory);
     }
-    
+
   }
 }
 
@@ -294,11 +299,17 @@ function setGoodMysqli ($array){
     $array_values = array_values ($array);
     $no = 0;
     for ($i = 0 ; $i < count ($array) ; $i++){
-        
+
         $data[$array_key[$no]] = mysqli_real_escape_string ( $connect , htmlspecialchars ( htmlentities ( strip_tags (trim ( $array_values[$i] ) ) ) ) );
         $no+=1;
     }
     return $data;
+}
+
+function setGoodMysqliOne ($data){
+$connect = $GLOBALS['connect'];
+  $result = mysqli_real_escape_string ( $connect , htmlspecialchars ( htmlentities ( strip_tags (trim ( $data ) ) ) ) );
+  return $result;
 }
 
 /*
@@ -310,7 +321,7 @@ function setGoodDate ($time){
   $time = strtotime ($time);
   $days = date ("D",$time);
   switch ($days){
-    
+
     case "Sun";
       $day = "Ahad";
       break;
@@ -341,7 +352,7 @@ function getEmployeByid ($id){
   $connect = $GLOBALS['connect'];
   $query = "SELECT * FROM biodata WHERE id = '$id'";
   $mysqli = mysqli_query ($connect,$query);
-  
+
   return $mysqli;
 }
 
@@ -349,18 +360,18 @@ function getSiswaByNIs ($nis){
   $connect = $GLOBALS['connect'];
   $query = "SELECT * FROM base_data_siswa WHERE nis = '$nis'";
   $mysqli = mysqli_query ($connect,$query);
-  
+
   return $mysqli;
-  
+
 }
 
 function getKelasByNIs ($nis){
   $connect = $GLOBALS['connect'];
   $query = "SELECT * FROM base_data_kelas WHERE nis = '$nis'";
   $mysqli = mysqli_query ($connect,$query);
-  
+
   return $mysqli;
-  
+
 }
 
 /*
@@ -375,18 +386,18 @@ function getKelasByNIs ($nis){
         $mysqli = mysqli_query ($connect,$query);
         return $mysqli;
     }
-    
+
     class baseSiswa {
       private $nis;
       private $connection;
-      
+
       public function __construct ($nis){
         $this->nis = $nis;
         $host = $GLOBALS['host'];
         $username = $GLOBALS['username'];
         $pass = $GLOBALS['pass'];
         $dbname = $GLOBALS['dbname'];
-            
+
         if (mysqli_connect ($host,$username,$pass,$dbname)){
             $this->connection = mysqli_connect ($host,$username,$pass,$dbname);
         }
@@ -399,37 +410,125 @@ function getKelasByNIs ($nis){
             $connect = $GLOBALS['connect'];
             $query = "SELECT * FROM base_data_siswa WHERE nis = '$this->nis'";
             $mysqli = mysqli_query ($connect,$query);
-            
+
             return $mysqli;
       }
-      
+
       public function getKelasByNIs (){
         $connect = $GLOBALS['connect'];
         $query = "SELECT * FROM base_data_kelas WHERE nis = '$this->nis'";
         $mysqli = mysqli_query ($connect,$query);
-        
+
         return $mysqli;
       }
-      
+
       public function getInformasiBk ($formId,$informasiId,$kelas){
         $connect = $GLOBALS['connect'];
         $query = "SELECT * FROM bk_kar_perkembangan WHERE nis = '$this->nis' AND  inf_id = '$informasiId' AND form_id = '$formId' AND kelas LIKE '%$kelas%' ORDER BY id_pencatatan ASC";
         $mysqli = mysqli_query ($connect,$query);
         return $mysqli;
       }
-      
+
       public function setAbsenPerpustakaan () {
         $connect = $GLOBALS['connect'];
       }
-      
-      
+
+
       public function getNama (){
             $connect = $GLOBALS['connect'];
             $query = "SELECT * FROM base_data_siswa WHERE nis = '$this->nis'";
             $mysqli = mysqli_query ($connect,$query);
-            
+
             $data = mysqli_fetch_assoc ($mysqli);
             return $data['nama_siswa'];
       }
+    }
+
+    Class CalonSiswa {
+      private $noId;
+      private $connection;
+
+      public function __construct ($no_id){
+        $this->noId = $no_id;
+        $host = $GLOBALS['host'];
+        $username = $GLOBALS['username'];
+        $pass = $GLOBALS['pass'];
+        $dbname = $GLOBALS['dbname'];
+
+        if (mysqli_connect ($host,$username,$pass,$dbname)){
+            $this->connection = mysqli_connect ($host,$username,$pass,$dbname);
+        }
+        else {
+            die ("Hubungi Muhammad Farras Ma'ruf berikan informasi berikut : <br>File : ".__FILE__."<br>Baris : ".__LINE__);
+        }
+      }
+
+      public function getDataCalonSiswa (){
+            $connect = $GLOBALS['connect'];
+            $query = "SELECT * FROM ppdb_peserta_sementara WHERE no_id = '$this->noId'";
+            $mysqli = mysqli_query ($connect,$query);
+
+            return $mysqli;
+      }
+
+      public function updateCalonPesertaSementara(){
+        $connect = $GLOBALS['connect'];
+        $query = "UPDATE ppdb_peserta_sementara SET sudah_daftar = 1 WHERE no_id = '$this->noId'";
+        $mysqli = mysqli_query ($connect,$query);
+
+        return $mysqli;
+      }
+
+      public function addDataPPDBPeserta($tp,$no_peserta,$jkl,$namaPanjang,$namaPanggilan){
+
+        if (strtoupper($jkl) == "L"){
+          $jkl = "Ikhwan";
+        }
+        else if (strtoupper($jkl) == "P"){
+          $jkl = "Akhwat";
+        }
+        else {
+          $jkl = "Error";
+        }
+
+        $namaPanjang = setGoodMysqliOne ($namaPanjang);
+        $namaPanggilan = setGoodMysqliOne ($namaPanggilan);
+
+        $connect = $GLOBALS['connect'];
+        $query = "INSERT INTO ppdb_peserta (`tp`, `no_peserta`, `jenis_kelamin`, `nama_panjang`, `nama_panggilan`) VALUES
+        ('$tp','$no_peserta','$jkl','$namaPanjang','$namaPanggilan')";
+        $mysqli = mysqli_query ($connect,$query);
+
+        // echo mysqli_error($connect);
+        return $mysqli;
+      }
+
+      public function addDataWawancara ($noPeserta,$tp){
+        $connect = $GLOBALS['connect'];
+        $query = "INSERT INTO `ppdb_text_wawancara`(`no_peserta`, `tp`) VALUES ('$noPeserta','$tp')";
+        $mysqli = mysqli_query ($connect,$query);
+
+        // echo mysqli_error($connect);
+        return $mysqli;
+      }
+
+      public function addDataWawancaraNilai ($noPeserta,$tp){
+        $connect = $GLOBALS['connect'];
+        $query = "INSERT INTO `ppdb_nilai_wawancara`(`no_peserta`, `tp`) VALUES ('$noPeserta','$tp')";
+        $mysqli = mysqli_query ($connect,$query);
+
+        // echo mysqli_error($connect);
+        return $mysqli;
+      }
+
+      public function isRegistered ($noPeserta) {
+        $connect = $GLOBALS['connect'];
+        $query = "SELECT * FROM ppdb_peserta WHERE no_peserta = '$noPeserta'";
+        $mysqli = mysqli_query ($connect,$query);
+
+        // echo mysqli_error($connect);
+        return $mysqli;
+      }
+
     }
 ?>

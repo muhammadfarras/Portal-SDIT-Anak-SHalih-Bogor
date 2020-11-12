@@ -8,14 +8,13 @@
     <link rel="icon" href="../../../../img/3x3.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../../../fa/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body id="body">
-    <!-- <img id="loading-page" src="img/loading.gif" class="sr-only"> -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="../">
         <img src="../../../../img/3x3.png" alt="..." class="img" style="width: 2rem">
@@ -28,13 +27,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Catat data<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Catat Data<span class="sr-only active">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../konfirmasi-data">Konfirmasi Data<span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div class="container mt-5">
+
+
+    <div class="container mt-2">
       <h2>Catat Informasi Calon peserta didik SDIT Anshal</h2>
       <hr>
       <form class="mt-2">
@@ -43,15 +47,15 @@
         <div class="form-row">
           <div class="form-group col-md-12">
             <label for="inputnama">Nama Anak</label>
-            <input type="email" class="form-control" id="inputnama">
+            <input type="text" class="form-control" id="inputnama">
           </div>
           <div class="form-group col-md-6">
             <label for="inputnamaayah">Nama Ayah</label>
-            <input type="email" class="form-control" id="inputnamaayah">
+            <input type="text" class="form-control" id="inputnamaayah">
           </div>
           <div class="form-group col-md-6">
             <label for="inputhpayah">Nomor <i>Handphone</i></label>
-            <input type="Email" class="form-control" id="inputhpayah">
+            <input type="text" class="form-control" id="inputhpayah">
           </div>
           <div class="form-group col-md-12">
             <label for="inputemailayah">Email Ayah</label>
@@ -61,11 +65,11 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputemailibu">Nama Ibu</label>
-            <input type="email" class="form-control" id="inputemailibu">
+            <input type="text" class="form-control" id="inputemailibu">
           </div>
           <div class="form-group col-md-6">
             <label for="inputhpibu">Nomor <i>Handphone</i></label>
-            <input type="Email" class="form-control" id="inputhpibu">
+            <input type="text" class="form-control" id="inputhpibu">
           </div>
           <div class="form-group col-md-12">
             <label for="inputnamaibu">Email Ibu</label>
@@ -74,10 +78,24 @@
         </div>
 
         <!-- Button untuk memicu modal -->
-        <button id="buttonSubmit" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+        <button id="buttonSubmit" type="button" class="btn btn-success" data-target="#exampleModal">
           Submit
         </button>
       </form>
+    </div>
+
+    <!-- // Toast -->
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+        <div class="toast mt-5 ml-5" style="position: absolute; top: 0; left: 0;" data-autohide="false">
+        <div class="toast-header">
+          <strong class="mr-auto text-primary">Status Update Data</strong>
+          <small class="text-muted"></small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+        </div>
+        <div id="isiToast" class="toast-body">
+          Data berhasil di update
+        </div>
+      </div>
     </div>
 
 
@@ -111,6 +129,9 @@
         </div>
       </div>
     </div>
+
+
+
 <script src="javascript.js"></script>
 </body>
 

@@ -6,7 +6,7 @@
     /* Variable untuk tahun pelajaran
      *-------------------------------
     */
-    $tp = "2020-2021"; // Tahun pelajaran
+    $tp = "2021-2022"; // Tahun pelajaran
 
     /*
      *---------------------------

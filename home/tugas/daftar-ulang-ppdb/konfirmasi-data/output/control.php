@@ -14,6 +14,7 @@ if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
     $noPeserta = $_GET['no_peserta'];
     $arrNoPeserta = explode ("-",$noPeserta);
 
+
   // Nama Panggilan Peserta
     $namaPanggilanPeserta = $_GET['nama_panggilan'];
 
@@ -26,9 +27,10 @@ if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
         $data = mysqli_fetch_assoc($siswa->getDataCalonSiswa ());
         // print_r ($data);
 
-        // check apakah ada 4 array atau tidak jika diexploda
-        if (count($arrNoPeserta) !== 4){
-          print_r (json_encode(array("status"=>"0","text"=>"Kode peserta salah")));
+        /* ------------------------ Kebijakan corona -----------------*/
+        // check apakah ada 5 array atau tidak jika diexploda
+        if (count($arrNoPeserta) !== 5){
+          print_r (json_encode(array("status"=>"0","text"=>"Kode peserta salah tolong ikuti pola yang benar.")));
           exit();
         }
         // check apakah L atau P
@@ -42,13 +44,74 @@ if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
           exit();
         }
 
+        switch ($arrNoPeserta[4]) {
+          case 'I':
+            $waktuTest = "Senin, 4 Januari 2021";
+          break;
+
+          case 'II':
+          $waktuTest = "Senin, 4 Januari 2021";
+          break;
+
+          case 'III':
+            $waktuTest = "Selasa, 5 Januari 2021";
+          break;
+
+          case 'IV':
+            $waktuTest = "Selasa, 5 Januari 2021";
+          break;
+
+          case 'V':
+          $waktuTest = "Rabu, 6 Januari 2021";
+          break;
+
+          case 'VI':
+          $waktuTest = "Rabu, 6 Januari 2021";
+          break;
+
+          case 'VII':
+          $waktuTest = "Kamis, 7 Januari 2020";
+          break;
+
+          case 'VIII':
+          $waktuTest = "Kamis, 7 Januari 2020";
+          break;
+
+          case 'IX':
+          $waktuTest = "Jum'at, 8 Januari 2020";
+          break;
+
+          case 'X':
+          $waktuTest = "Jum'at, 8 Januari 2020";
+          break;
+
+
+          default:
+            print_r (json_encode(array("status"=>"0","text"=>"Kode kelompok salah, gunakan huruf romawi (capital) ex: XI")));
+            exit();
+            break;
+        }
+
+        /* ------------------------ Kebijakan corona -----------------*/
+
+
         // check apakah no pserta sudah terdafatare
-        if ($siswa->isRegistered($noPeserta)->num_rows  == 1){
+        $noPesertaTanpaKelompok = $arrNoPeserta[0]."-".$arrNoPeserta[1]."-".$arrNoPeserta[2]."-".$arrNoPeserta[3];
+        if ($siswa->isRegistered($noPesertaTanpaKelompok)->num_rows  == 1){
           print_r (json_encode(array("status"=>"0","text"=>"No peserta sudah terdaftar")));
           exit();
         }
 
+        //Validate alamat email
+        if (!validateAddress($data['email_ayah'])) {
+          print_r (json_encode(array("status"=>"0","text"=>"Email ayah tidak benar")));
+          exit();
+        }
 
+        if (!validateAddress($data['email_ibu'])){
+          print_r (json_encode(array("status"=>"0","text"=>"Email ibu tidak benar")));
+          exit();
+        }
 
         // Update database PPDB Peserta
           // Update calon ppdb_peserta_sementara

@@ -298,3 +298,31 @@ function runAjax () {
 
 
 nodeFind.addEventListener ('input',runAjax);
+
+
+
+
+/*poop over */
+var kontenPola = '<small>[No urut]-[L atau P]-[PPDB]-[Tahun Pelajaran]-[Kelompok]<hr>';
+kontenPola += '<ol><li>No urut harus memiliki 3 digit angka</li>';
+kontenPola += '<li><b>L</b> untuk ikhwan dan <b>P</b> untuk akhwat</li>';
+kontenPola += '<li>PPDB harus huruf besar semua</li>';
+kontenPola += '<li>Tahun pelajaran harus tahun pelajaran dibuka ppdb dengan seperator <i>slash</i> <b>/</b></li>';
+kontenPola += '<li>Nomor kelompok ditulis dengan huruf romawi</li></ol>';
+kontenPola += '<b><small class="text-muted">Contoh : </small>001-L-PPDB-2021/2022-II </b>';
+kontenPola += '';
+kontenPola += '</small>';
+
+
+
+$(function () {
+$('#myPopOver').popover({
+  content: kontenPola,
+  html: true,
+  trigger : 'hover',
+  title : 'Pola Penulisan Nomor Peserta',
+  delay : { "show": 200, "hide": 300 },
+  placement : 'right',
+  container: 'body'
+  })
+})

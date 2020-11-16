@@ -8,6 +8,22 @@
              $qr->text ($data['nama']."-".$noPeserta);
              $qr->qrCode(500,'imageqr/'.$fileStroge.'.png');
        }
+
+       // reduce kemungkina file png salah
+      // sleep (2);
+
+//       $fileStroge = md5(md5(time()));
+//       include ("qr.php");
+//        if (!file_exists ("imageqr/$fileStroge.png")){
+//                // Barcode Objet
+//                $qr = new QR_BarCode();
+//                $qr->text ("Hilyah Ma'ruf"."-001-P-PPDB-2021/2022-IX");
+//                $qr->qrCode(500,'imageqr/'.$fileStroge.'.png');
+//          }
+//
+//
+// echo "work";
+//       die();
 ?>
 
 
@@ -24,14 +40,14 @@
                             line-height: 30px;
                         }
                         i {
-                            color: #50CE50;
+                            /* color: #50CE50; */
                         }
                         li {
                             text-align: justify;
                             line-height: 30px;
                         }
                         td {
-                            padding: 10px;
+                            padding: 3px;
                         }
 
                         td.ket {
@@ -85,7 +101,7 @@
                 <body>
                     <div class="lefter"></div>
                     <div class="container">
-                        <h3 style="text-align: center">Bukti Registrasi<br> <i>PPDB SDIT Anak Shalih Bogor Islamic School</i></h3>
+                        <h3 style="text-align: center">Bukti Registrasi<br> <i style="color: #50CE50;">PPDB SDIT Anak Shalih Bogor Islamic School</i></h3>
                         <hr>
                         <table>
                             <tr><td class="ket">Nama</td><td>: <?php echo $data['nama']; ?></td></tr>
@@ -93,17 +109,24 @@
                         </table>
                         <hr>
                         <ul>
-                            <li>Seleksi Penerimaan Peserta Didik Baru SDIT Anak Shalih Bogor terdiri dari test psikologi, wawancara calon orangtua siswa dan test kemampuan umum (<b>Khusus Siswa Pindahan</b>).</li>
-                            <li>Calon siswa dan orangtua wajib hadir dalam test seleksi tersebut pada hari Sabtu, 29 Februari 2020 pukul 07.30 di SDIT Anak Shalih Bogor.
-                            <b>Tidak ada perpanjangan waktu bagi calon siswa yang terlambat</b></li>
+                            <li>Seleksi Penerimaan Peserta Didik Baru SDIT Anak Shalih Bogor <i>Islamic School</i> terdiri dari psikotest, Simulasi Pembelajaran, & Wawancara Calon Orangtua Siswa serta Test Potensi Akademik (<b>Khusus Siswa Pindahan</b>).</li>
+                            <li>Calon siswa dan orangtua wajib hadir dalam seleksi siswa tersebut pada hari <?php echo $waktuTest; ?> pukul 07.00 WIB di SDIT Anak Shalih Bogor <i>Islamic School</i>.
+                            <b>Mohon dapat hadir tepat waktu karena tidak ada perpanjangan waktu bagi calon siswa yang terlambat</b></li>
                         </ul>
                         <ul>
                             <h3>Dalam kegiatan tersebut diwajibkan:</h3>
-                            <li>Membawa lembar ini (<em>red: Bukti Registrasi</em>) untuk ditukarkan dengan kartu peserta ujian.</li>
-                            <li>Menaati segala aturan dan tata tertib yang berlaku di SDIT Anak Shalih Bogor.</li>
-                            <li>Mengenakan pakaian yang sopan dan tertutup.</li>
+                            <li>Membawa lembar ini (<em>red: Bukti Registrasi</em>) untuk ditukarkan dengan kartu peserta seleksi siswa.</li>
+                            <li>Menaati segala aturan dan tata tertib yang berlaku di SDIT Anak Shalih Bogor Islamic School.</li>
+                            <li>Mengenakan pakaian yang sopan dan menutup aurat.</li>
                             <li>Bagi calon orangtua siswa yang membawa kendaraan untuk mematuhi segala arahan petugas keamanan guna kenyamanan bersama.</li>
-                            <li>Harap bagi orangtua siswa mematuhi protokol covid-19</li>
+                            <li>Mematuhi protokol kesehatan, memakai masker, memakai <i>Face Shield</i> dan membawa <i>Hand Sanitizer</i>.</li>
+                            <li>
+                              <ul>
+                                Peralatan yang harus dibawa siswa
+                                <li>Membawa pensil, panghapus & pensil warna</li>
+                                <li>Membawa air minum dan makanan ringan siswa</li>
+                              </ul>
+                            </li>
                         </ul>
 
                         <address>Informasi lebih lanjut dapat menghubungi <a href="tel: 02518653638"> (0251) 865-3638 </a>atau Whats App <a href="https://wa.me/628111114841?">0811-111-4841</a>.</address>

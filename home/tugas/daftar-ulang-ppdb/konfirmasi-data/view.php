@@ -9,9 +9,11 @@
 
     <link rel="stylesheet" href="../../../../fa/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="body">
@@ -89,7 +91,15 @@
             <small class="error-text sr-only" id="spanError"></small>
 
             <input type="text" id="NoPeserta" class="form-control">
-            <small class="text-muted">Contoh : 001-L-PPDB-2021/2022</small>
+            <small class="text-muted">
+              Ikuti pola penulisan nomor peserta
+              <i
+              id = "myPopOver"
+              class="fa fa-info-circle"
+              aria-hidden="true"
+              type="button" class="" data-toggle="popover" title="" data-content=""
+              ></i>
+            </small>
           </div>
           <div class="form-group">
             <label for="disabledTextInput">Nama Panggilan</label>
@@ -161,8 +171,10 @@
 </div>
 
 
-
 <script src="javascript.js"></script>
+<script>
+
+</script>
 </body>
 
 </html>

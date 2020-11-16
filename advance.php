@@ -523,7 +523,7 @@ function getKelasByNIs ($nis){
 
       public function isRegistered ($noPeserta) {
         $connect = $GLOBALS['connect'];
-        $query = "SELECT * FROM ppdb_peserta WHERE no_peserta = '$noPeserta'";
+        $query = "SELECT * FROM ppdb_peserta WHERE no_peserta LIKE '%$noPeserta%'";
         $mysqli = mysqli_query ($connect,$query);
 
         // echo mysqli_error($connect);

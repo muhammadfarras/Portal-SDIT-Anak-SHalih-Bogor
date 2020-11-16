@@ -54,7 +54,7 @@
             <input type="text" class="form-control" id="inputnamaayah">
           </div>
           <div class="form-group col-md-6">
-            <label for="inputhpayah">Nomor <i>Handphone</i></label>
+            <label for="inputhpayah">Nomor <i>Handphone</i> Ayah</label>
             <input type="text" class="form-control" id="inputhpayah">
           </div>
           <div class="form-group col-md-12">
@@ -64,16 +64,16 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputemailibu">Nama Ibu</label>
-            <input type="text" class="form-control" id="inputemailibu">
+            <label for="inputnamaibu">Nama Ibu</label>
+            <input type="text" class="form-control" id="inputnamaibu">
           </div>
           <div class="form-group col-md-6">
-            <label for="inputhpibu">Nomor <i>Handphone</i></label>
+            <label for="inputhpibu">Nomor <i>Handphone</i> Ibu</label>
             <input type="text" class="form-control" id="inputhpibu">
           </div>
           <div class="form-group col-md-12">
-            <label for="inputnamaibu">Email Ibu</label>
-            <input type="email" class="form-control" id="inputnamaibu">
+            <label for="inputemailibu">Email Ibu</label>
+            <input type="email" class="form-control" id="inputemailibu">
           </div>
         </div>
 

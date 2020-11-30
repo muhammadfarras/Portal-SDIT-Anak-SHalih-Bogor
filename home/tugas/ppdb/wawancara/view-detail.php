@@ -1,8 +1,8 @@
 <div class="time" id="time">
-  
+
 </div>
 <div class="time-show" id="time-show">
-  
+
 </div>
 <div class="detail" id="detail">
   <h3><?php echo $detail['nama_panjang'] ?></h3>
@@ -30,8 +30,7 @@
           <label>
             <input type="radio" name="satu" value=2>
             <br>
-            Memiliki aqidah yang benar, amal yang shalih, akhlak mulia
-            cinta Allah dan Rasulnya, akal cerdas, dan fisik sehat & kuat
+            Menjelaskan secara umum, tanpa penjelasan yang detail
           </label>
         </td>
       </tr>
@@ -40,16 +39,16 @@
           <label>
             <input type="radio" name="satu" value=1>
             <br>
-            Jawaban yang tidak berhubungan dengan item yang tertera di nilai baik. 
+            Jawaban yang tidak berhubungan dengan item yang tertera di nilai baik.
             Misalkan: jarak yang dekat, gedung yang bagus, atau agar pintar tapi tidak
             memperhatikan bagaimana aqidah & akhlak dsb
           </label>
         </td>
       </tr>
       <tr><td colspan=3><hr></td></tr>
-      
-      
-      
+
+
+
       <tr>
         <td rowspan=4 class="partanyaan">
           Apa yang ibu/bapak ketahui tentang SDIT Anak Shalih ?
@@ -62,10 +61,10 @@
             <input type="radio" name="dua" value=3 required>
             <br>
             Mampu menjelaskan secara detail tentang SDIT Anak Shalih. Bahkan sudah melakukan survei
-            langsung atau bertanya pada orang yang pernah menyekolahkan di SDIT Anak Shalih. 
+            langsung atau bertanya pada orang yang pernah menyekolahkan di SDIT Anak Shalih.
           </label>
         </td>
-        
+
         </td>
       </tr>
       <tr>
@@ -87,8 +86,8 @@
           </label>
         </td>
       </tr>
-      <tr><td colspan=3><hr></td></tr>  
-      
+      <tr><td colspan=3><hr></td></tr>
+
       <!-- Pertanyaan tiga -->
       <tr>
         <td rowspan=4 class="partanyaan">
@@ -105,10 +104,10 @@
           <label>
             <input type="radio" name="tiga" value=3 required>
             <br>
-            Mampu menjelaskan tentang manhaj salaf & Mengikuti kajian manhaj salaf dengan rutin. 
+            Mampu menjelaskan tentang manhaj salaf & Mengikuti kajian manhaj salaf dengan rutin.
           </label>
         </td>
-        
+
         </td>
       </tr>
       <tr>
@@ -116,7 +115,7 @@
           <label>
             <input type="radio" name="tiga" value=2>
             <br>
-            Mampu menjelaskan secara umum, 
+            Mampu menjelaskan secara umum,
             pernah” mengikuti kajian manhaj salaf.
             Insya Allah mau belajar lebih jauh tentang manhaj salaf.
 
@@ -133,8 +132,8 @@
         </td>
       </tr>
       <tr><td colspan=3><hr></td></tr>
-      
-      
+
+
       <!-- Pertanyaan empat -->
       <tr>
         <td rowspan=4 class="partanyaan">
@@ -154,7 +153,7 @@
 
           </label>
         </td>
-        
+
         </td>
       </tr>
       <tr>
@@ -176,14 +175,14 @@
         </td>
       </tr>
       <tr><td colspan=3><hr></td></tr>
-      
+
       <!---------------------------------------------------------------------------------------------------------------------->
       <!---------------------------------------------------- Pertanyaan lima ------------------------------------------------>
       <!---------------------------------------------------- Pertanyaan lima ------------------------------------------------>
       <!---------------------------------------------------------------------------------------------------------------------->
       <tr>
         <td rowspan=4 class="partanyaan">
-          Bapak/ibu ada TV di rumah? apa yang biasa bapak ibu tonton dan bagaimana dengan anak-anak, 
+          Bapak/ibu ada TV di rumah? apa yang biasa bapak ibu tonton dan bagaimana dengan anak-anak,
           Apakah anak-anak biasa pegang gadget, apa yang mereka lakukan dengan gadgetnya, bagaimana sikapnya ketika dilarang,
           Bersediakah untuk dilarang atau dibatasi penggunaannya?
         </td>
@@ -194,14 +193,14 @@
           <label>
             <input type="radio" name="lima" value=3 required>
             <br>
-            Tidak menonton TV kecuali tayangan yang baik, 
-            Tidak diberikan gadget, hanya boleh memegang gadget didampingi atau pinjam punya orang tua dalam rangka mengenalkan teknologi, & 
+            Tidak menonton TV kecuali tayangan yang baik,
+            Tidak diberikan gadget, hanya boleh memegang gadget didampingi atau pinjam punya orang tua dalam rangka mengenalkan teknologi, &
             Tidak diperkenankan memiliki akun medsos dan sebagainya.
 
 
           </label>
         </td>
-        
+
         </td>
       </tr>
       <tr>
@@ -209,8 +208,8 @@
           <label>
             <input type="radio" name="lima" value=2>
             <br>
-              Memiliki gadget dengan pemberian nasihat atau perjanjian diawal, namun terkadang anak boleh memainkan gadet di kamar secara mandiri,  
-              Menonton TV namun tidak terlalu ketat mengawasi anak. Terkadang anak boleh nonton TV sendiri dengan chanel yang tidak dikontrol, &  
+              Memiliki gadget dengan pemberian nasihat atau perjanjian diawal, namun terkadang anak boleh memainkan gadet di kamar secara mandiri,
+              Menonton TV namun tidak terlalu ketat mengawasi anak. Terkadang anak boleh nonton TV sendiri dengan chanel yang tidak dikontrol, &
               Memiliki akun medsos dengan pengawasan yang tidak terlalu ketat.
 
           </label>
@@ -221,16 +220,16 @@
           <label>
             <input type="radio" name="lima" value=1>
             <br>
-              Menonton TV dengan tidak mempedulikan kontrol, bersama-sama maupun sendiri, 
-              Menggunakan gadget dengan leluasa, & 
+              Menonton TV dengan tidak mempedulikan kontrol, bersama-sama maupun sendiri,
+              Menggunakan gadget dengan leluasa, &
               Memiliki akun medsos tanpa pengawasan.
 
           </label>
         </td>
       </tr>
       <tr><td colspan=3><hr></td></tr>
-      
-      
+
+
       <!---------------------------------------------------------------------------------------------------------------------->
       <!---------------------------------------------------- Pertanyaan enam ------------------------------------------------>
       <!---------------------------------------------------- Pertanyaan enam ------------------------------------------------>
@@ -250,7 +249,7 @@
             Antusias mendengarkan penjelasan & Siap untuk berkontribusi dan mengikuti kegiatan parenting secara berkala.
           </label>
         </td>
-        
+
         </td>
       </tr>
       <tr>
@@ -272,7 +271,7 @@
         </td>
       </tr>
       <tr><td colspan=3><hr></td></tr>
-      
+
        <!---------------------------------------------------------------------------------------------------------------------->
       <!---------------------------------------------------- Pertanyaan tujuh ------------------------------------------------>
       <!---------------------------------------------------- Pertanyaan tujuh ------------------------------------------------>
@@ -317,8 +316,8 @@
         </td>
       </tr>
       <tr><td colspan=3><hr></td></tr>
-      
-      
+
+
       <!---------------------------------------------------------------------------------------------------------------------->
       <!---------------------------------------------------- Pertanyaan Delapan ------------------------------------------------>
       <!---------------------------------------------------- Pertanyaan Delapan ------------------------------------------------>
@@ -335,7 +334,7 @@
           <label>
             <input type="radio" name="delapan" value=3 required>
             <br>
-            Setuju 
+            Setuju
           </label>
         </td>
         </td>
@@ -359,8 +358,8 @@
         </td>
       </tr>
       <tr><td colspan=3><hr></td></tr>
-      
-      
+
+
       <!---------------------------------------------------------------------------------------------------------------------->
       <!---------------------------------------------------- Pertanyaan Sembilan ------------------------------------------------>
       <!---------------------------------------------------- Pertanyaan Sembilan ------------------------------------------------>
@@ -389,7 +388,7 @@
           <label>
             <input type="radio" name="sembilan" value=2>
             <br>
-              Befikir (kira-kira saya bisa ini)
+              Bepikir (kira-kira saya bisa ini)
           </label>
         </td>
       </tr>
@@ -403,8 +402,8 @@
         </td>
       </tr>
       <tr><td colspan=3><hr></td></tr>
-      
-      
+
+
       <!---------------------------------------------------------------------------------------------------------------------->
       <!---------------------------------------------------- Pertanyaan Sepuluh ------------------------------------------------>
       <!---------------------------------------------------- Pertanyaan Sepuluh ------------------------------------------------>
@@ -446,8 +445,8 @@
         </td>
       </tr>
       <tr><td colspan=3><hr></td></tr>
-      
-      
+
+
       <!---------------------------------------------------------------------------------------------------------------------->
       <!---------------------------------------------------- Pertanyaan Sebelas ------------------------------------------------>
       <!---------------------------------------------------- Pertanyaan Sebelas ------------------------------------------------>

@@ -9,21 +9,15 @@
              $qr->qrCode(500,'imageqr/'.$fileStroge.'.png');
        }
 
-       // reduce kemungkina file png salah
-      // sleep (2);
 
-//       $fileStroge = md5(md5(time()));
-//       include ("qr.php");
-//        if (!file_exists ("imageqr/$fileStroge.png")){
-//                // Barcode Objet
-//                $qr = new QR_BarCode();
-//                $qr->text ("Hilyah Ma'ruf"."-001-P-PPDB-2021/2022-IX");
-//                $qr->qrCode(500,'imageqr/'.$fileStroge.'.png');
-//          }
-//
-//
-// echo "work";
-//       die();
+    // check apakah barcode tersebut bertipe png atau selainnya
+    // lakukan while selama check bukan png
+
+    // while ('imageqr/'.$fileStroge.'.png' != "image/png"){
+    //   $qr = new QR_BarCode();
+    //   $qr->text ($data['nama']."-".$noPeserta);
+    //   $qr->qrCode(500,'imageqr/'.$fileStroge.'.png');
+    // }
 ?>
 
 
@@ -120,13 +114,7 @@
                             <li>Mengenakan pakaian yang sopan dan menutup aurat.</li>
                             <li>Bagi calon orangtua siswa yang membawa kendaraan untuk mematuhi segala arahan petugas keamanan guna kenyamanan bersama.</li>
                             <li>Mematuhi protokol kesehatan, memakai masker, memakai <i>Face Shield</i> dan membawa <i>Hand Sanitizer</i>.</li>
-                            <li>
-                              <ul>
-                                Peralatan yang harus dibawa siswa
-                                <li>Membawa pensil, panghapus & pensil warna</li>
-                                <li>Membawa air minum dan makanan ringan siswa</li>
-                              </ul>
-                            </li>
+                            <li>Membawa pensil, panghapus & pensil warna.</li>
                         </ul>
 
                         <address>Informasi lebih lanjut dapat menghubungi <a href="tel: 02518653638"> (0251) 865-3638 </a>atau Whats App <a href="https://wa.me/628111114841?">0811-111-4841</a>.</address>

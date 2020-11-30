@@ -6,7 +6,7 @@
       body {
         background-color: #727272;
       }
-      
+
       div {
         padding-top: 20px;
         padding-left: 10px;
@@ -17,7 +17,7 @@
         text-align: center;
         padding-bottom: 20px;
       }
-      
+
       span.kode {
         color: white;
         letter-spacing: 5px;
@@ -26,7 +26,7 @@
         background-color: #347C01;
         border-radius: 10px;
       }
-      
+
       p {
         padding-top: 20px;
         font-size: 12px;
@@ -35,7 +35,7 @@
       .arti {
         font-size: 12px;
       }
-      
+
       .arab {
         font-size: 18px;
       }
@@ -61,7 +61,7 @@
         (HR. Bukhari no. 6682 dan Muslim no. 2694)
      </address>
   </div>
- 
+
 </body>
 </html>
 <?php
@@ -76,22 +76,22 @@ require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
 
 $mail = new PHPMailer;
-                              
+
 //Set PHPMailer to use SMTP.
-$mail->isSMTP();            
-//Set SMTP host name                          
+$mail->isSMTP();
+//Set SMTP host name
 $mail->Host = "smtp.gmail.com";
 //Set this to true if SMTP host requires authentication to send email
-$mail->SMTPAuth = true;                          
-//Provide username and password     
-$mail->Username = "maruffarras@gmail.com";                 
-$mail->Password = "farrasmuhammad";                           
+$mail->SMTPAuth = true;
+//Provide username and password
+$mail->Username = "ppdb@anakshalihbogor.sch.id";
+$mail->Password = "Lesehan24";
 //If SMTP requires TLS encryption then set it
-//$mail->SMTPSecure = "tls";                           
-//Set TCP port to connect to 
-$mail->Port = 587;                                   
+//$mail->SMTPSecure = "tls";
+//Set TCP port to connect to
+$mail->Port = 587;
 
-$mail->From = "farras@anakshalihbogor.sch.id";
+$mail->From = "ppdb@anakshalihbogor.sch.id";
 $mail->FromName = "Sistem Informasi SDIT Anak Shalih";
 
 
@@ -107,7 +107,7 @@ $mail->Subject = "[Kode Pendaftaran Sistem SDIT Anshal]";
 $mail->Body = $html;
 $mail->AltBody = "This is the plain text version of the email content";
 
-if(!$mail->send()) 
+if(!$mail->send())
 {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }

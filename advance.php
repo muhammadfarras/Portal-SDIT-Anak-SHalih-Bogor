@@ -531,4 +531,45 @@ function getKelasByNIs ($nis){
       }
 
     }
+
+
+
+    Class CalonSiswaUlang {
+      private $noId;
+      private $connection;
+
+      public function __construct ($no_id){
+        $this->noId = $no_id;
+        $host = $GLOBALS['host'];
+        $username = $GLOBALS['username'];
+        $pass = $GLOBALS['pass'];
+        $dbname = $GLOBALS['dbname'];
+
+        if (mysqli_connect ($host,$username,$pass,$dbname)){
+            $this->connection = mysqli_connect ($host,$username,$pass,$dbname);
+        }
+        else {
+            die ("Hubungi Muhammad Farras Ma'ruf berikan informasi berikut : <br>File : ".__FILE__."<br>Baris : ".__LINE__);
+        }
+      }
+
+      public function getDataCalonSiswa (){
+            $connect = $GLOBALS['connect'];
+            $noId = setGoodMysqliOne ($this->noId);
+            $query = "SELECT * FROM ppdb_peserta WHERE no_peserta = '$noId'";
+            $mysqli = mysqli_query ($connect,$query);
+
+            return $mysqli;
+      }
+
+      public function getEmail($name)
+      {
+        $connect = $GLOBALS['connect'];
+        $name = setGoodMysqliOne ($name);
+        $query = "SELECT * FROM ppdb_peserta_sementara WHERE nama = '$name'";
+        $mysqli = mysqli_query ($connect,$query);
+
+        return $mysqli;
+      }
+    }
 ?>

@@ -280,7 +280,7 @@ $mail->SMTPAuth = true;
 //Provide username and password
 
 $mail->Username = "ppdb@anakshalihbogor.sch.id";
-$mail->Password = "Lesehan24";
+$mail->Password = "/4Dmin.5Ekolah\\";
 
 // $mail->Username = "farras@anakshalihbogor.sch.id";
 // $mail->Password = "farras2712";

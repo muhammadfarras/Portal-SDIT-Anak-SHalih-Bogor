@@ -63,16 +63,29 @@
 
 
 
-      <!--<div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-deck mt-5">
+      <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <h5 class="card-title">Buat Ulang PDF dan Email</h5>
+           <a href="buat-ulang-pdf/" class=""><small class="text-muted"><img class="card-img-top img-fluid w-25 float-left mr-2" src="img/koreksi.png" alt="Card image cap"></small>
+          <p class="card-text">
+            Pilih menu ini jika ada kondisi dimana barcode tidak muncul didalam file bukti registrasi. Sistem akan membuat ulang PDF dan mengirimkan PDF baru ke orangtua siswa.
+          </p>
+          </a>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Kondisi PPDB</h5>
+           <a href="kondisi-ppdb/" class=""><small class="text-muted"><img class="card-img-top img-fluid w-25 float-left mr-2" src="img/chart.png" alt="Card image cap"></small>
+          <p class="card-text">
+            Untuk mengetahui Kondisi PPDB TP 2021/2022
+          </p>
+          </a>
         </div>
-      </div>-->
+      </div>
+    </div>
     </div>
   </div>
   <!--Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->

@@ -17,11 +17,11 @@
 
     if (!empty ($_POST['wawancara'])){
         setValueInterview ($_POST['no_peserta'],$_POST['pewawancara'],$_POST['satu'],$_POST['dua'],$_POST['tiga'],$_POST['empat'],$_POST['lima']
-                           ,$_POST['enam'],$_POST['tujuh'],$_POST['delapan'],$_POST['sembilan'],$_POST['sepuluh'],$_POST['sebelas']);
+                           ,$_POST['enam'],$_POST['tujuh'],$_POST['delapan'],$_POST['sembilan'],$_POST['sepuluh'],$_POST['sebelas'],$_POST['duabelas']);
 
         setTextInterview ($_POST['no_peserta'],$_POST['pewawancara'],$_POST['text-satu'],$_POST['text-dua'],$_POST['text-tiga'],$_POST['text-empat']
                                ,$_POST['text-lima'],$_POST['text-enam'],$_POST['text-tujuh'],$_POST['text-delapan'],$_POST['text-sembilan']
-                               ,$_POST['text-sepuluh'],$_POST['text-sebelas']);
+                               ,$_POST['text-sepuluh'],$_POST['text-sebelas'],$_POST['text-duabelas']);
 
         setWawancara ($_POST['no_peserta']);
 

@@ -176,9 +176,50 @@
       </tr>
       <tr><td colspan=3><hr></td></tr>
 
+      <!-- Pertanyaan lima -->
+      <tr>
+        <td rowspan=4 class="partanyaan">
+          Apa yang dirasakan Bapak dan Ibu apabila mengetahui nilai-nilai ananda di bawah KKM?
+Bentuk respon yang bagaimana, yang Bapak dan Ibu tunjukkan kepada ananda?
+
+        </td>
+        <td rowspan=4><textarea name="text-lima"></textarea>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            <input type="radio" name="lima" value=3>
+            <br>
+             Interospeksi diri melihat apa yang kurang dalam pendampingan di rumah
+
+          </label>
+        </td>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            <input type="radio" name="lima" value=2>
+            <br>
+            Menyalahkan anak
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            <input type="radio" name="lima" value=1>
+            <br>
+            Menyalahkan guru/ sekolah
+          </label>
+        </td>
+      </tr>
+      <tr><td colspan=3><hr></td></tr>
+
       <!---------------------------------------------------------------------------------------------------------------------->
-      <!---------------------------------------------------- Pertanyaan lima ------------------------------------------------>
-      <!---------------------------------------------------- Pertanyaan lima ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan enam ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan enam ------------------------------------------------>
       <!---------------------------------------------------------------------------------------------------------------------->
       <tr>
         <td rowspan=4 class="partanyaan">
@@ -186,12 +227,12 @@
           Apakah anak-anak biasa pegang gadget, apa yang mereka lakukan dengan gadgetnya, bagaimana sikapnya ketika dilarang,
           Bersediakah untuk dilarang atau dibatasi penggunaannya?
         </td>
-        <td rowspan=4><textarea name="text-lima"></textarea>
+        <td rowspan=4><textarea name="text-enam"></textarea>
       </tr>
       <tr>
         <td>
           <label>
-            <input type="radio" name="lima" value=3 required>
+            <input type="radio" name="enam" value=3 required>
             <br>
             Tidak menonton TV kecuali tayangan yang baik,
             Tidak diberikan gadget, hanya boleh memegang gadget didampingi atau pinjam punya orang tua dalam rangka mengenalkan teknologi, &
@@ -206,7 +247,7 @@
       <tr>
         <td>
           <label>
-            <input type="radio" name="lima" value=2>
+            <input type="radio" name="enam" value=2>
             <br>
               Memiliki gadget dengan pemberian nasihat atau perjanjian diawal, namun terkadang anak boleh memainkan gadet di kamar secara mandiri,
               Menonton TV namun tidak terlalu ketat mengawasi anak. Terkadang anak boleh nonton TV sendiri dengan chanel yang tidak dikontrol, &
@@ -218,7 +259,7 @@
       <tr>
         <td>
           <label>
-            <input type="radio" name="lima" value=1>
+            <input type="radio" name="enam" value=1>
             <br>
               Menonton TV dengan tidak mempedulikan kontrol, bersama-sama maupun sendiri,
               Menggunakan gadget dengan leluasa, &
@@ -231,20 +272,20 @@
 
 
       <!---------------------------------------------------------------------------------------------------------------------->
-      <!---------------------------------------------------- Pertanyaan enam ------------------------------------------------>
-      <!---------------------------------------------------- Pertanyaan enam ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan tujuh ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan tujuh ------------------------------------------------>
       <!---------------------------------------------------------------------------------------------------------------------->
       <tr>
         <td rowspan=4 class="partanyaan">
-          Respone orang tua siswa tentang program diskolah, contoh: PPA dan PPAM, Program Parenting
+          Respon orang tua siswa tentang program di sekolah, contoh: Mutabaah Yaumiyah,  Pengembangan Pembelajaran Alquran (PPA)
           <i>bersediakah mengikuti program sekala berkala ?</i>
         </td>
-        <td rowspan=4><textarea name="text-enam"></textarea>
+        <td rowspan=4><textarea name="text-tujuh"></textarea>
       </tr>
       <tr>
         <td>
           <label>
-            <input type="radio" name="enam" value=3 required>
+            <input type="radio" name="tujuh" value=3 required>
             <br>
             Antusias mendengarkan penjelasan & Siap untuk berkontribusi dan mengikuti kegiatan parenting secara berkala.
           </label>
@@ -255,7 +296,7 @@
       <tr>
         <td>
           <label>
-            <input type="radio" name="enam" value=2>
+            <input type="radio" name="tujuh" value=2>
             <br>
               Mendengarkan penjelasan, Siap mengikuti kegiatan parenting dan pola pengajaran di sekolah.
           </label>
@@ -264,7 +305,7 @@
       <tr>
         <td>
           <label>
-            <input type="radio" name="enam" value=1>
+            <input type="radio" name="tujuh" value=1>
             <br>
               Tidak bersedia, atau Bersedia dengan beberapa syarat misal “oke saja asal tidak mengganggu aktivitas saya” dsb.
           </label>
@@ -273,24 +314,24 @@
       <tr><td colspan=3><hr></td></tr>
 
        <!---------------------------------------------------------------------------------------------------------------------->
-      <!---------------------------------------------------- Pertanyaan tujuh ------------------------------------------------>
-      <!---------------------------------------------------- Pertanyaan tujuh ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan delapan ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan delapan ------------------------------------------------>
       <!---------------------------------------------------------------------------------------------------------------------->
       <tr>
         <td rowspan=4 class="partanyaan">
           Apakah jika anak bapak/ibu diterima di SDIT Anak Shalih, bersedia melunasi biaya pendidikan secara tunai sekali pembayaran?
           <br>
-          <i style="color: red">Pembayaran adalah 1 minggu setelah pengumuman kelulusan tgl 27 Januari 2020</i>
+          <!-- <i style="color: red">Pembayaran adalah 1 minggu setelah pengumuman kelulusan tgl 27 Januari 2020</i>
           <br>
           <i style="color: red">(apabila 2X  pembayaran cicilan pertama minimal 11,5 jt dan sisanya di akhir bulan Maret, jika tidak lunas
-          dianggap mengundurkan diri)</i>
+          dianggap mengundurkan diri)</i> -->
         </td>
-        <td rowspan=4><textarea name="text-tujuh"></textarea>
+        <td rowspan=4><textarea name="text-delapan"></textarea>
       </tr>
       <tr>
         <td>
           <label>
-            <input type="radio" name="tujuh" value=3 required>
+            <input type="radio" name="delapan" value=3 required>
             <br>
             Siap 1 kali bayar
           </label>
@@ -300,7 +341,7 @@
       <tr>
         <td>
           <label>
-            <input type="radio" name="tujuh" value=2>
+            <input type="radio" name="delapan" value=2>
             <br>
               Siap namun dengan beberapa toleransi
           </label>
@@ -309,7 +350,7 @@
       <tr>
         <td>
           <label>
-            <input type="radio" name="tujuh" value=1>
+            <input type="radio" name="delapan" value=1>
             <br>
               Tidak siap
           </label>
@@ -319,20 +360,20 @@
 
 
       <!---------------------------------------------------------------------------------------------------------------------->
-      <!---------------------------------------------------- Pertanyaan Delapan ------------------------------------------------>
-      <!---------------------------------------------------- Pertanyaan Delapan ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan sembilan ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan sembilan ------------------------------------------------>
       <!---------------------------------------------------------------------------------------------------------------------->
       <tr>
         <td rowspan=4 class="partanyaan">
           Bagaimana pendapat anda jika kami memberikan sanksi administrasi kepada orang tua yang tidak disiplin administrasi
           tanpa konfirmasi kepada pihak sekolah bahkan menolak untuk dikonfirmasi
         </td>
-        <td rowspan=4><textarea name="text-delapan"></textarea>
+        <td rowspan=4><textarea name="text-sembilan"></textarea>
       </tr>
       <tr>
         <td>
           <label>
-            <input type="radio" name="delapan" value=3 required>
+            <input type="radio" name="sembilan" value=3 required>
             <br>
             Setuju
           </label>
@@ -342,7 +383,7 @@
       <tr>
         <td>
           <label>
-            <input type="radio" name="delapan" value=2>
+            <input type="radio" name="sembilan" value=2>
             <br>
               Kurang setuju
           </label>
@@ -351,7 +392,7 @@
       <tr>
         <td>
           <label>
-            <input type="radio" name="delapan" value=1>
+            <input type="radio" name="sembilan" value=1>
             <br>
               Tidak setuju
           </label>
@@ -361,8 +402,8 @@
 
 
       <!---------------------------------------------------------------------------------------------------------------------->
-      <!---------------------------------------------------- Pertanyaan Sembilan ------------------------------------------------>
-      <!---------------------------------------------------- Pertanyaan Sembilan ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan sepuluh ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan sepuluh ------------------------------------------------>
       <!---------------------------------------------------------------------------------------------------------------------->
       <tr>
         <td rowspan=4 class="partanyaan">
@@ -371,12 +412,12 @@
           jika infaq berapa jumlahnya?
 
         </td>
-        <td rowspan=4><textarea name="text-sembilan"></textarea>
+        <td rowspan=4><textarea name="text-sepuluh"></textarea>
       </tr>
       <tr>
         <td>
           <label>
-            <input type="radio" name="sembilan" value=3 required>
+            <input type="radio" name="sepuluh" value=3 required>
             <br>
             (Infaq dan atau skill yang bisa dikontribusikan untuk sekolah)
           </label>
@@ -386,52 +427,9 @@
       <tr>
         <td>
           <label>
-            <input type="radio" name="sembilan" value=2>
-            <br>
-              Bepikir (kira-kira saya bisa ini)
-          </label>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label>
-            <input type="radio" name="sembilan" value=1>
-            <br>
-              Tidak
-          </label>
-        </td>
-      </tr>
-      <tr><td colspan=3><hr></td></tr>
-
-
-      <!---------------------------------------------------------------------------------------------------------------------->
-      <!---------------------------------------------------- Pertanyaan Sepuluh ------------------------------------------------>
-      <!---------------------------------------------------- Pertanyaan Sepuluh ------------------------------------------------>
-      <!---------------------------------------------------------------------------------------------------------------------->
-      <tr>
-        <td rowspan=4 class="partanyaan">
-          Kami memiliki program dompet pendidikan untuk membantu anak-anak yang memiliki keterbatasan finansial apakah bapak/ibu
-          <br>
-          <i style="color: red">Pewawancara menjelaskan sejara singkat program dompet pendidikan</i>
-        </td>
-        <td rowspan=4><input type="number" name="text-sepuluh" min=0>
-      </tr>
-      <tr>
-        <td>
-          <label>
-            <input type="radio" name="sepuluh" value=3  required>
-            <br>
-            Siap bantu menjadi donatur tetap
-          </label>
-        </td>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label>
             <input type="radio" name="sepuluh" value=2>
             <br>
-              Befikir (kira-kira saya bisa ini)
+              Bepikir (kira-kira saya bisa ini)
           </label>
         </td>
       </tr>
@@ -448,23 +446,23 @@
 
 
       <!---------------------------------------------------------------------------------------------------------------------->
-      <!---------------------------------------------------- Pertanyaan Sebelas ------------------------------------------------>
-      <!---------------------------------------------------- Pertanyaan Sebelas ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan sebelas ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan sebelas ------------------------------------------------>
       <!---------------------------------------------------------------------------------------------------------------------->
       <tr>
         <td rowspan=4 class="partanyaan">
-            <li>Kesan pesan terhadap sekolah ananda sebelumnya</li>
-            <li>Bagaimana pendapat anda jika ada orangtua siswa ceroboh menyebarkan berita yang merugikan sekolah,
-            kemudian sekolah memberikan sanksi terkait hal tersebut?</li>
+          Kami memiliki program dompet pendidikan untuk membantu anak-anak yang memiliki keterbatasan finansial apakah bapak/ibu
+          <br>
+          <i style="color: red">Pewawancara menjelaskan sejara singkat program dompet pendidikan</i>
         </td>
-        <td rowspan=4><textarea name="text-sebelas"></textarea>
+        <td rowspan=4><input type="number" name="text-sebelas" min=0>
       </tr>
       <tr>
         <td>
           <label>
-            <input type="radio" name="sebelas" value=3 required>
+            <input type="radio" name="sebelas" value=3  required>
             <br>
-            Respone yang baik
+            Siap bantu menjadi donatur tetap
           </label>
         </td>
         </td>
@@ -474,7 +472,7 @@
           <label>
             <input type="radio" name="sebelas" value=2>
             <br>
-              Respone dengan jawaban formal
+              Befikir (kira-kira saya bisa ini)
           </label>
         </td>
       </tr>
@@ -482,6 +480,49 @@
         <td>
           <label>
             <input type="radio" name="sebelas" value=1>
+            <br>
+              Tidak
+          </label>
+        </td>
+      </tr>
+      <tr><td colspan=3><hr></td></tr>
+
+
+      <!---------------------------------------------------------------------------------------------------------------------->
+      <!---------------------------------------------------- Pertanyaan Duabelas ------------------------------------------------>
+      <!---------------------------------------------------- Pertanyaan Duabelas ------------------------------------------------>
+      <!---------------------------------------------------------------------------------------------------------------------->
+      <tr>
+        <td rowspan=4 class="partanyaan">
+            <li>Kesan pesan terhadap sekolah ananda sebelumnya</li>
+            <li>Bagaimana pendapat anda jika ada orangtua siswa ceroboh menyebarkan berita yang merugikan sekolah,
+            kemudian sekolah memberikan sanksi terkait hal tersebut?</li>
+        </td>
+        <td rowspan=4><textarea name="text-duabelas"></textarea>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            <input type="radio" name="duabelas" value=3 required>
+            <br>
+            Respone yang baik
+          </label>
+        </td>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            <input type="radio" name="duabelas" value=2>
+            <br>
+              Respone dengan jawaban formal
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            <input type="radio" name="duabelas" value=1>
             <br>
               Respone jelek / menyudutkan sekolah
           </label>

@@ -39,19 +39,19 @@
      * Set value untuk nilai interview
      * Ada 13 argumen yang harus diisi
     */
-    function setValueInterview ($nopeserta,$pewawancara,$satu,$dua,$tiga,$empat,$lima,$enam,$tujuh,$delapan,$sembilan,$sepuluh,$sebelas){
+    function setValueInterview ($nopeserta,$pewawancara,$satu,$dua,$tiga,$empat,$lima,$enam,$tujuh,$delapan,$sembilan,$sepuluh,$sebelas,$duabelas){
         $connect = $GLOBALS['connect'];
         $pewawancara = mysqli_real_escape_string ( $connect , htmlspecialchars ( htmlentities ( strip_tags (trim ( $pewawancara ) ) ) ) );
         $query = "UPDATE ppdb_nilai_wawancara SET nilai_satu='$satu',nilai_dua='$dua',
         nilai_tiga='$tiga',nilai_empat='$empat',nilai_lima='$lima',nilai_enam='$enam',nilai_tujuh='$tujuh',
-        nilai_delapan='$delapan',nilai_sembilan='$sembilan',nilai_sepuluh='$sepuluh',nilai_sebelas='$sebelas', pewawancara='$pewawancara'
+        nilai_delapan='$delapan',nilai_sembilan='$sembilan',nilai_sepuluh='$sepuluh',nilai_sebelas='$sebelas',nilai_duabelas='$duabelas', pewawancara='$pewawancara'
         WHERE no_peserta = '$nopeserta'";
 
         $mysqli = mysqli_query ($connect,$query);
         return $mysqli;
     }
 
-    function setTextInterview ($nopeserta,$pewawancara,$satu,$dua,$tiga,$empat,$lima,$enam,$tujuh,$delapan,$sembilan,$sepuluh,$sebelas){
+    function setTextInterview ($nopeserta,$pewawancara,$satu,$dua,$tiga,$empat,$lima,$enam,$tujuh,$delapan,$sembilan,$sepuluh,$sebelas,$duabelas){
         $connect = $GLOBALS['connect'];
 
         $pewawancara = mysqli_real_escape_string ( $connect , htmlspecialchars ( htmlentities ( strip_tags (trim ( $pewawancara ) ) ) ) );
@@ -66,10 +66,11 @@
         $sembilan = mysqli_real_escape_string ( $connect , htmlspecialchars ( htmlentities ( strip_tags (trim ( $sembilan ) ) ) ) );
         $sepuluh = mysqli_real_escape_string ( $connect , htmlspecialchars ( htmlentities ( strip_tags (trim ( $sepuluh ) ) ) ) );
         $sebelas = mysqli_real_escape_string ( $connect , htmlspecialchars ( htmlentities ( strip_tags (trim ( $sebelas ) ) ) ) );
+        $duabelas = mysqli_real_escape_string ( $connect , htmlspecialchars ( htmlentities ( strip_tags (trim ( $duabelas ) ) ) ) );
 
         $query = "UPDATE ppdb_text_wawancara SET nilai_satu='$satu',nilai_dua='$dua',
         nilai_tiga='$tiga',nilai_empat='$empat',nilai_lima='$lima',nilai_enam='$enam',nilai_tujuh='$tujuh',
-        nilai_delapan='$delapan',nilai_sembilan='$sembilan',nilai_sepuluh='$sepuluh',nilai_sebelas='$sebelas', pewawancara='$pewawancara'
+        nilai_delapan='$delapan',nilai_sembilan='$sembilan',nilai_sepuluh='$sepuluh',nilai_sebelas='$sebelas',nilai_duabelas='$duabelas', pewawancara='$pewawancara'
         WHERE no_peserta = '$nopeserta'";
 
         $mysqli = mysqli_query ($connect,$query);

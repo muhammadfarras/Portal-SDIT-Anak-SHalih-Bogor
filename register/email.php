@@ -85,7 +85,7 @@ $mail->Host = "smtp.gmail.com";
 $mail->SMTPAuth = true;
 //Provide username and password
 $mail->Username = "ppdb@anakshalihbogor.sch.id";
-$mail->Password = "Lesehan24";
+$mail->Password = "/4Dmin.5Ekolah\\";
 //If SMTP requires TLS encryption then set it
 //$mail->SMTPSecure = "tls";
 //Set TCP port to connect to

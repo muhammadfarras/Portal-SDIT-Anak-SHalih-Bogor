@@ -471,9 +471,25 @@ function getKelasByNIs ($nis){
             return $mysqli;
       }
 
+      public function getDataCalonSiswaTkit (){
+            $connect = $GLOBALS['connect'];
+            $query = "SELECT * FROM ppdb_peserta_sementara WHERE no_id = '$this->noId' AND groupId = 'TKIT-AE'";
+            $mysqli = mysqli_query ($connect,$query);
+
+            return $mysqli;
+      }
+
       public function updateCalonPesertaSementara(){
         $connect = $GLOBALS['connect'];
         $query = "UPDATE ppdb_peserta_sementara SET sudah_daftar = 1 WHERE no_id = '$this->noId'";
+        $mysqli = mysqli_query ($connect,$query);
+
+        return $mysqli;
+      }
+
+      public function updateCalonPesertaSementaraTkit($groupId){
+        $connect = $GLOBALS['connect'];
+        $query = "UPDATE ppdb_peserta_sementara SET sudah_daftar = 1 WHERE no_id = '$this->noId' AND groupId = '$groupId'";
         $mysqli = mysqli_query ($connect,$query);
 
         return $mysqli;
@@ -503,9 +519,42 @@ function getKelasByNIs ($nis){
         return $mysqli;
       }
 
+      public function addDataPPDBPesertaTkit($tp,$no_peserta,$jkl,$namaPanjang,$namaPanggilan,$groupId){
+
+        if (strtoupper($jkl) == "L"){
+          $jkl = "Ikhwan";
+        }
+        else if (strtoupper($jkl) == "P"){
+          $jkl = "Akhwat";
+        }
+        else {
+          $jkl = "Error";
+        }
+
+        $namaPanjang = setGoodMysqliOne ($namaPanjang);
+        $namaPanggilan = setGoodMysqliOne ($namaPanggilan);
+
+        $connect = $GLOBALS['connect'];
+        $query = "INSERT INTO ppdb_peserta (`tp`, `no_peserta`, `jenis_kelamin`, `nama_panjang`, `nama_panggilan`,`groupId`) VALUES
+        ('$tp','$no_peserta','$jkl','$namaPanjang','$namaPanggilan','$groupId')";
+        $mysqli = mysqli_query ($connect,$query);
+
+        // echo mysqli_error($connect);
+        return $mysqli;
+      }
+
       public function addDataWawancara ($noPeserta,$tp){
         $connect = $GLOBALS['connect'];
         $query = "INSERT INTO `ppdb_text_wawancara`(`no_peserta`, `tp`) VALUES ('$noPeserta','$tp')";
+        $mysqli = mysqli_query ($connect,$query);
+
+        // echo mysqli_error($connect);
+        return $mysqli;
+      }
+
+      public function addDataWawancaraTkit ($noPeserta,$tp,$groupId){
+        $connect = $GLOBALS['connect'];
+        $query = "INSERT INTO `ppdb_text_wawancara`(`no_peserta`, `tp`,`groupId`) VALUES ('$noPeserta','$tp','$groupId')";
         $mysqli = mysqli_query ($connect,$query);
 
         // echo mysqli_error($connect);
@@ -521,9 +570,27 @@ function getKelasByNIs ($nis){
         return $mysqli;
       }
 
+      public function addDataWawancaraNilaiTkit ($noPeserta,$tp,$groupId){
+        $connect = $GLOBALS['connect'];
+        $query = "INSERT INTO `ppdb_nilai_wawancara`(`no_peserta`, `tp`,`groupId`) VALUES ('$noPeserta','$tp','$groupId')";
+        $mysqli = mysqli_query ($connect,$query);
+
+        // echo mysqli_error($connect);
+        return $mysqli;
+      }
+
       public function isRegistered ($noPeserta) {
         $connect = $GLOBALS['connect'];
         $query = "SELECT * FROM ppdb_peserta WHERE no_peserta LIKE '%$noPeserta%'";
+        $mysqli = mysqli_query ($connect,$query);
+
+        // echo mysqli_error($connect);
+        return $mysqli;
+      }
+
+      public function isRegisteredTkit ($noPeserta,$groupId) {
+        $connect = $GLOBALS['connect'];
+        $query = "SELECT * FROM ppdb_peserta WHERE no_peserta = '$noPeserta' AND groupId='$groupId'";
         $mysqli = mysqli_query ($connect,$query);
 
         // echo mysqli_error($connect);

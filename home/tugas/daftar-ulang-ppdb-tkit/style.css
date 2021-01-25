@@ -1,0 +1,11 @@
+.container {
+  margin: 0 auto;
+}
+
+a {
+  color: black;
+}
+a:hover {
+  color: black;
+  text-decoration: none;
+}

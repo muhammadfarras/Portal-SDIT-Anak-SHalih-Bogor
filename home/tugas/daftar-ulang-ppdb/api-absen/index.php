@@ -5,7 +5,7 @@ if (isset($_GET)){
   if (!empty($_GET['no_peserta'])){
 
     $noPeserta = $_GET['no_peserta'];
-    $query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2021-2022' AND no_peserta = '$noPeserta'";
+    $query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2021-2022' AND no_peserta = '$noPeserta' AND groupId = ''" ;
     $mysqliQuery = mysqli_query ($connect,$query);
 
     $arrayName = array();

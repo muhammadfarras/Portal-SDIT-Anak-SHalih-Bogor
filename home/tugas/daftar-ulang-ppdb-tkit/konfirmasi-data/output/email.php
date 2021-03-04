@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SDIT Anak Shalih Bogor | Bukti Registrasi Peserta PPDB TP 2021-2022</title>
+  <title>TKIT Aisyah Educare | Bukti Registrasi Peserta PPDB TP 2021-2022</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <style>
@@ -97,7 +97,7 @@
                    <table style="border-collapse:collapse;border-spacing:0px" width="100%" cellspacing="0" cellpadding="0">
                      <tbody><tr style="border-collapse:collapse">
                       <td style="padding:0;Margin:0" align="left"><p style="Margin:0;font-size:14px;font-family:'Questrial';line-height:21px;color:#666666">Assalamu'alaikum warahmatullahi wabarakatuh,<br><br>Yth. Calon Orangtua/Wali Siswa Ananda <?php echo $data['nama']; ?>, berikut kami lampirkan bukti registrasi PPDB, <b>Mohon bukti registrasi harap dibawa & ditunjukan kepada pantia</b> pada saat test PPDB berlangsung.
-                        <br><br>Atas perhatian kerjasama Bapak/Ibu, kami ucapkan terima kasih, jazakumullahu khairan.<br><br>Hormat kami,<br><br><br>Admin PPDB <br>SDIT Anak Shalih Bogor Islamic School</p></td>
+                        <br><br>Atas perhatian kerjasama Bapak/Ibu, kami ucapkan terima kasih, jazakumullahu khairan.<br><br>Hormat kami,<br><br><br>Admin PPDB <br>TKIT Aisyah <i>Educare</i></p></td>
                      </tr>
                    </tbody></table></td>
                  </tr>

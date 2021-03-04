@@ -1,7 +1,7 @@
 <?php
 require ("../../../../advance.php");
 
-$query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2021-2022' AND jenis_kelamin = 'Akhwat'";
+$query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2021-2022' AND jenis_kelamin = 'Akhwat'  AND groupId = ''";
 $mysqliQuery = mysqli_query ($connect,$query);
 
 $arrayName = array();

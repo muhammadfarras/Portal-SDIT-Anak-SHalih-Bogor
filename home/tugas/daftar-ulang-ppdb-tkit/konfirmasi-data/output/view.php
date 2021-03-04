@@ -24,7 +24,7 @@
         <!DOCTYPE html>
             <html>
                 <head>
-                    <title>Verifikasii PPDB SDIT Anak Shalih Bogor</title>
+                    <title>Verifikasii PPDB TKIT     Anak Shalih Bogor</title>
                     <meta charset="UTF-8">
                     <style>
                       img {
@@ -102,9 +102,8 @@
                             <tr><td class="ket">No Peserta</td><td>: <?php echo $noPeserta; ?></td></tr>
                         </table>
                         <hr>
-                        <ul>
-                            <li>Seleksi Penerimaan Peserta Didik Baru TKIT Aisyah Educare terdiri dari Observasi Calon Siswa & Wawancara Calon Orangtua Siswa.</li>
-                            <li>Calon siswa dan orangtua wajib hadir dalam seleksi siswa tersebut pada hari Sabtu, 13 Februari 2021 pukul 07.30 WIB.
+                        <ul>  Seleksi Penerimaan Peserta Didik Baru TKIT Aisyah Educare terdiri dari Observasi Calon Siswa & Wawancara Calon Orangtua Siswa.</li>
+                            <li>Calon siswa dan orangtua wajib hadir dalam seleksi siswa tersebut pada hari Sabtu, 13 Februari 2021 pukul <?php echo $waktuTest;?>.
                             <b>Mohon dapat hadir tepat waktu karena tidak ada perpanjangan waktu bagi calon siswa yang terlambat</b></li>
                             <li>Kehadiran orangtua tidak bisa diwakilkan.<li>
                             <li>Sesi wawancara orangtua dilaksanakan bersamaan dengan observasi calon siswa.</li>

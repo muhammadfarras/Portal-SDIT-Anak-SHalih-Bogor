@@ -45,8 +45,26 @@ if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
         }
 
         /* ------------------------ Kebijakan corona -----------------*/
+        $noUrut = (int)$arrNoPeserta[0];
+        switch (true) {
+          case ($noUrut >= 1 and $noUrut <=10):
+            $waktuTest = "07:30 - 08:30 WIB";
+            break;
+          case ($noUrut >= 11 and $noUrut <=20):
+            $waktuTest = "08:30 - 09:30 WIB";
+            break;
+          case ($noUrut >= 21 and $noUrut <=30):
+            $waktuTest = "09:30 - 10:30 WIB";
+            break;
+          case ($noUrut >= 31 and $noUrut <=40):
+            $waktuTest = "10:30 - 11:30 WIB";
+            break;
 
-
+          default:
+          print_r (json_encode(array("status"=>"0","text"=>"Kode peserta salah Pada no Urut")));
+          exit();
+            break;
+        }
         // check apakah no pserta sudah terdafatare
         $noPesertaTanpaKelompok = $arrNoPeserta[0]."-".$arrNoPeserta[1]."-".$arrNoPeserta[2]."-".$arrNoPeserta[3];
         if ($siswa->isRegisteredTkit($noPesertaTanpaKelompok,"TKIT-AE")->num_rows  == 1){

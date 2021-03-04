@@ -6,7 +6,7 @@ if (isset($_GET)){
   if (!empty($_GET['no_peserta'])){
 
     $noPeserta = $_GET['no_peserta'];
-    $query = "UPDATE ppdb_peserta SET ishadir = 'ok' WHERE no_peserta = '$noPeserta'";
+    $query = "UPDATE ppdb_peserta SET ishadir = 'ok' WHERE no_peserta = '$noPeserta'  AND groupId = ''";
     $mysqliQuery = mysqli_query ($connect,$query);
 
 

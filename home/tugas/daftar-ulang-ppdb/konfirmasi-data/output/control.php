@@ -46,19 +46,19 @@ if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
 
         switch ($arrNoPeserta[4]) {
           case 'I':
-            $waktuTest = "Senin, 4 Januari 2021";
+            $waktuTest = "Sabtu, 20 Maret 2021";
           break;
 
           case 'II':
-          $waktuTest = "Senin, 4 Januari 2021";
+          $waktuTest = "Sabtu, 20 Maret 2021";
           break;
 
           case 'III':
-            $waktuTest = "Selasa, 5 Januari 2021";
+            $waktuTest = "Minggu, 21 Maret 2021";
           break;
 
           case 'IV':
-            $waktuTest = "Selasa, 5 Januari 2021";
+            $waktuTest = "Minggu, 21 Maret 2021";
           break;
 
           case 'V':

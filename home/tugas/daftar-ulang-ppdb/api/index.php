@@ -1,7 +1,7 @@
 <?php
 require ("../../../../advance.php");
 
-$query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2021-2022'";
+$query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2021-2022' AND groupId = ''";
 $mysqliQuery = mysqli_query ($connect,$query);
 echo mysqli_error($connect);
 if (mysqli_affected_rows ($connect)){
@@ -30,6 +30,7 @@ $kelSepuluh = 0;
     }
 
     $kelompok = explode("-",$data['no_peserta']);
+    // echo $data['no_peserta']."<br>";
     switch ($kelompok['4']) {
       case 'I':
         $kelSatu ++;

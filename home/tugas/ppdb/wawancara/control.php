@@ -4,6 +4,9 @@
     include ("modal.php");
     include ("view.php");
 
+    $resultGFAPI = new GravityFormApi();
+
+
     if (!empty ($_POST['find'])){
         $data = getDetail (setGoodMysqliOne ($_POST['nama_peserta']));
 
@@ -11,6 +14,11 @@
             $biodata = mysqli_fetch_assoc (getBiodataFromIdRaw ($_COOKIE['id']));
             $detail = mysqli_fetch_assoc (getDetail (setGoodMysqliOne ($_POST['nama_peserta'])));
             $result = mysqli_fetch_assoc (getInterview ($detail['no_peserta']));
+
+            $namaPanjang = $detail["nama_panjang"];
+
+            $hasil_kontribusi = $resultGFAPI->getResultByName($namaPanjang);
+
             include ("view-detail.php");
         }
     }

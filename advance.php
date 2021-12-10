@@ -11,7 +11,7 @@ ob_start();
 */
 
 // create for object mysql
-$host = "localhost";
+$host = "192.168.1.201";
 $username = "farras";
 $pass = "farrasmuhammad";
 $dbname = "base";

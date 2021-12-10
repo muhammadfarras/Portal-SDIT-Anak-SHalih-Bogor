@@ -410,7 +410,43 @@ Bentuk respon yang bagaimana, yang Bapak dan Ibu tunjukkan kepada ananda?
           Kontribusi seperti apa yang akan bapak-ibu lakukan jika anak diterima di SDIT
           <br>
           jika infaq berapa jumlahnya?
+          <hr>
+          <div class="p-3 mb-2 bg-info text-dark">
+            <?php
+            // kode infaq
+              // print_r ($hasil_kontribusi);
+              if ($hasil_kontribusi["result"] == "ada kontribusi"){
 
+                if (array_key_exists("Infaq umum", $hasil_kontribusi["values"])){
+                  echo "Infaq Umum : <b>" . $hasil_kontribusi["values"]["Infaq umum"]."</b>";
+                }
+                else {
+                  echo "Tidak ada infaq umum";
+                }
+                echo "<hr>";
+                if (array_key_exists("Keterampilan/keahlian", $hasil_kontribusi["values"])){
+                  echo "Keterampilan/keahlian : <b>" . $hasil_kontribusi["values"]["Keterampilan/keahlian"]."</b>";
+                }
+                else {
+                  echo "Tidak ada kontribusi Keterampilan/keahlian";
+                }
+
+                echo "<hr>";
+
+                if (array_key_exists("Lainnya", $hasil_kontribusi["values"])){
+                  echo "Lainnya : <b>" . $hasil_kontribusi["values"]["Lainnya"]."</b>";
+                }
+                else {
+                  echo "Tidak ada kontribusi Lainnya";
+                }
+
+              }
+              else {
+                echo  "Tidak ada kontribusi apa-apa";
+              }
+            ?>
+
+          </div>
         </td>
         <td rowspan=4><textarea name="text-sepuluh"></textarea>
       </tr>
@@ -454,6 +490,29 @@ Bentuk respon yang bagaimana, yang Bapak dan Ibu tunjukkan kepada ananda?
           Kami memiliki program dompet pendidikan untuk membantu anak-anak yang memiliki keterbatasan finansial apakah bapak/ibu
           <br>
           <i style="color: red">Pewawancara menjelaskan sejara singkat program dompet pendidikan</i>
+
+          <div class="p-3 mb-2 bg-info text-dark">
+            <?php
+            // kode dompet pendidikan
+              // print_r ($hasil_kontribusi["values"]["Dompet Pendidikan Tetap"]);
+              if ($hasil_kontribusi["result"] == "ada kontribusi"){
+                if (array_key_exists("Dompet Pendidikan Tetap", $hasil_kontribusi["values"])){
+                  echo "Infaq dompet pendidikan Tetap : <b>" . $hasil_kontribusi["values"]["Dompet Pendidikan Tetap"]."</b>";
+                }
+                elseif (array_key_exists("Dompet Pendidikan Tidak Tetap", $hasil_kontribusi)){
+                  echo "Infaq dompet pendidikan Tidak Tetap : " . $hasil_kontribusi["values"]["Dompet Pendidikan Tidak Tetap"];
+                }
+                else {
+                  echo "Tidak ada dompet pendidikan";
+                }
+
+              }
+              else {
+                echo  "Tidak ada kontribusi apa-apa.";
+              }
+            ?>
+
+          </div>
         </td>
         <td rowspan=4><input type="number" name="text-sebelas" min=0>
       </tr>

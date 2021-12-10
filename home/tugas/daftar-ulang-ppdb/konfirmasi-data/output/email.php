@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SDIT Anak Shalih Bogor | Bukti Registrasi Peserta PPDB TP 2021-2022</title>
+  <title>SDIT Anak Shalih Bogor | Bukti Registrasi Peserta PPDB TP 2022-2023</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <style>

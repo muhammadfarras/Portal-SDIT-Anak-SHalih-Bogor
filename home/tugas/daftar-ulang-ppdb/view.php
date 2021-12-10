@@ -68,7 +68,7 @@
 
 
     <div class="card-deck mt-5">
-      <div class="card">
+      <!-- <div class="card">
         <div class="card-body">
           <h5 class="card-title">Buat Ulang PDF dan Email</h5>
            <a href="buat-ulang-pdf/" class=""><small class="text-muted"><img class="card-img-top img-fluid w-25 float-left mr-2" src="img/koreksi.png" alt="Card image cap"></small>
@@ -77,9 +77,9 @@
           </p>
           </a>
         </div>
-      </div>
+      </div> -->
 
-      <div class="card">
+      <!-- <div class="card">
         <div class="card-body">
           <h5 class="card-title">Kondisi PPDB</h5>
            <a href="kondisi-ppdb/" class=""><small class="text-muted"><img class="card-img-top img-fluid w-25 float-left mr-2" src="img/chart.png" alt="Card image cap"></small>
@@ -88,7 +88,7 @@
           </p>
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
     </div>
   </div>

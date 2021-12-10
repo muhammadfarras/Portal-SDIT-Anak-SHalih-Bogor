@@ -9,7 +9,7 @@ $result = setGoodMysqli ($myArray);
 
 // save to mysqli
 // print_r ($result);
-$data = new DataBaseUpdate ($result,"2021-2022",$connect);
+$data = new DataBaseUpdate ($result,"2022-2023",$connect);
 
 if ($data->saveToDb()){
   echo "berhasil";

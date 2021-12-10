@@ -3,7 +3,7 @@ require ("../../../../advance.php");
 
 if (isset($_GET)){
   if ($_GET['param'] == "laki"){
-    $query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2021-2022' AND jenis_kelamin = 'Ikhwan'   AND groupId = ''";
+    $query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2022-2023' AND jenis_kelamin = 'Ikhwan' AND groupId = ''";
     $mysqliQuery = mysqli_query ($connect,$query);
 
     $arrayName = array();

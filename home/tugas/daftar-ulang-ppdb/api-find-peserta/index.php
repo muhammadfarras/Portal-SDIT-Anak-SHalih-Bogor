@@ -4,7 +4,7 @@ require ("../../../../advance.php");
 if (isset($_GET)){
   if ($_GET['param'] == "find"){
     $findNama = setGoodMysqliOne ($_GET['nama']);
-    $query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2021-2022' AND nama_panjang LIKE '%$findNama%'";
+    $query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2022-2023' AND nama_panjang LIKE '%$findNama%'";
     $mysqliQuery = mysqli_query ($connect,$query);
 
     $arrayName = array();

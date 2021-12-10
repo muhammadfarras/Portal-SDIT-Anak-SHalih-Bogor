@@ -1,7 +1,7 @@
 <?php
 require ("../../../../advance.php");
 
-$query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2021-2022' AND groupId = ''";
+$query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2022-2023' AND groupId = ''";
 $mysqliQuery = mysqli_query ($connect,$query);
 echo mysqli_error($connect);
 if (mysqli_affected_rows ($connect)){

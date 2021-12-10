@@ -1,10 +1,10 @@
 <?php
 require ("../../../../../../advance.php");
-header("Content-Type:   application/vnd.ms-excel; charset=utf-8");
-header("Content-Disposition: attachment; filename=rekap-wawancara-sdit-".date("d-m-Y").".xls");  //File name extension was wrong
-header("Expires: 0");
-header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-header("Cache-Control: private",false);
+// header("Content-Type:   application/vnd.ms-excel; charset=utf-8");
+// header("Content-Disposition: attachment; filename=rekap-wawancara-sdit-".date("d-m-Y").".xls");  //File name extension was wrong
+// header("Expires: 0");
+// header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+// header("Cache-Control: private",false);
 $year = $_GET['year'];
 $urutPertanyaan = ["Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Delapan","Sembilan","Sepuluh","Sebelas","Duabelas"];
 
@@ -60,7 +60,7 @@ $rows = mysqli_affected_rows ($connect);
        // Nilai dari wawancara
        if ($year ="2021-2022"){
          for ($i = 0 ; $i < $rows ; $i++){
-           echo "<td>".$data[2+$i]."</td>";
+           echo "<td>".$data[3+$i]."</td>";
          }
        }
 

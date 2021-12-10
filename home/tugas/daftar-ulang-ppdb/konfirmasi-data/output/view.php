@@ -1,12 +1,12 @@
 <?php
     ob_start();
     $fileStroge = md5(md5(time()));
-    include ("qr.php");
+    include('phpqrcode/qrlib.php');
      if (!file_exists ("imageqr/$fileStroge.png")){
              // Barcode Objet
-             $qr = new QR_BarCode();
-             $qr->text ($data['nama']."-".$noPeserta);
-             $qr->qrCode(500,'imageqr/'.$fileStroge.'.png');
+             QRcode::png($data['nama']."-".$noPeserta,'imageqr/'.$fileStroge.'.png');
+             // $qr->text ($data['nama']."-".$noPeserta);
+             // $qr->qrCode(500,'imageqr/'.$fileStroge.'.png');
        }
 
 
@@ -104,7 +104,7 @@
                         <hr>
                         <ul>
                             <li>Seleksi Penerimaan Peserta Didik Baru SDIT Anak Shalih Bogor <i>Islamic School</i> terdiri dari psikotest, Simulasi Pembelajaran, & Wawancara Calon Orangtua Siswa serta Test Potensi Akademik (<b>Khusus Siswa Pindahan</b>).</li>
-                            <li>Calon siswa dan orangtua wajib hadir dalam seleksi siswa tersebut pada hari <?php echo $waktuTest; ?> pukul 07.00 WIB di SDIT Anak Shalih Bogor <i>Islamic School</i>.
+                            <li>Calon siswa dan orangtua wajib hadir dalam seleksi siswa tersebut pada hari <?php echo $waktuTest; ?> pukul 09.00 WIB di SDIT Anak Shalih Bogor <i>Islamic School</i>.
                             <b>Mohon dapat hadir tepat waktu karena tidak ada perpanjangan waktu bagi calon siswa yang terlambat</b></li>
                         </ul>
                         <ul>
@@ -192,6 +192,10 @@
 
                         <br>
                         <br>
+
+                        <!-- <?php $fullKode = $data['nama'].'-'.$noPeserta; ?> -->
+                        <!-- <img class="mt-3" src="<?php echo 'imageqr.php?id=123123'?>"> -->
+
                         <img class="mt-3" src="<?php echo 'imageqr/'.$fileStroge.'.png'?>">
                         <br>
                         <span>Panitia PPDB SDIT Anak Shalih Bogor</span>

@@ -8,7 +8,7 @@ include ("modal.php");
 if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
 
   /*--------------*/
-  $tp = "2021/2022";
+  $tp = "2022/2023";
   /*--------------*/
   // array nama peserta
     $noPeserta = $_GET['no_peserta'];
@@ -44,53 +44,53 @@ if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
           exit();
         }
 
-        switch ($arrNoPeserta[4]) {
-          case 'I':
-            $waktuTest = "Sabtu, 20 Maret 2021";
-          break;
-
-          case 'II':
-          $waktuTest = "Sabtu, 20 Maret 2021";
-          break;
-
-          case 'III':
-            $waktuTest = "Minggu, 21 Maret 2021";
-          break;
-
-          case 'IV':
-            $waktuTest = "Minggu, 21 Maret 2021";
-          break;
-
-          case 'V':
-          $waktuTest = "Rabu, 6 Januari 2021";
-          break;
-
-          case 'VI':
-          $waktuTest = "Rabu, 6 Januari 2021";
-          break;
-
-          case 'VII':
-          $waktuTest = "Kamis, 7 Januari 2020";
-          break;
-
-          case 'VIII':
-          $waktuTest = "Kamis, 7 Januari 2020";
-          break;
-
-          case 'IX':
-          $waktuTest = "Jum'at, 8 Januari 2020";
-          break;
-
-          case 'X':
-          $waktuTest = "Jum'at, 8 Januari 2020";
-          break;
-
-
-          default:
-            print_r (json_encode(array("status"=>"0","text"=>"Kode kelompok salah, gunakan huruf romawi (capital) ex: XI")));
-            exit();
+        switch ($arrNoPeserta [4]) {
+            case 'I':
+              $waktuTest = "Senin, 13 Desember 2021";
             break;
-        }
+
+            case 'II':
+            $waktuTest = "Senin, 13 Desember 2021";
+            break;
+
+            case 'III':
+              $waktuTest = "Selasa, 14 Desember 2021";
+            break;
+
+            case 'IV':
+              $waktuTest = "Selasa, 14 Desember 2021";
+            break;
+
+            case 'V':
+            $waktuTest = "Rabu, 15 Desember 2021";
+            break;
+
+            case 'VI':
+            $waktuTest = "Rabu, 15 Desember 2021";
+            break;
+
+            case 'VII':
+            $waktuTest = "Kamis, 16 Desember 2021";
+            break;
+
+            case 'VIII':
+            $waktuTest = "Kamis, 16 Desember 2021";
+            break;
+
+            case 'IX':
+            $waktuTest = "Jum'at, 17 Desember 2021";
+            break;
+
+            case 'X':
+            $waktuTest = "Jum'at, 17 Desember 2021";
+            break;
+
+
+            default:
+              print_r (json_encode(array("status"=>"0","text"=>"No Kelompok Salah")));
+              exit();
+              break;
+          }
 
         /* ------------------------ Kebijakan corona -----------------*/
 

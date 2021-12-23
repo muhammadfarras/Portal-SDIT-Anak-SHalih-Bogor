@@ -1,6 +1,6 @@
 <?php
 /*----------------------*/
-$tp = "2021-2022";
+$tp = "2022-2023";
 /*----------------------*/
     function callPerserta () {
         $connect = $GLOBALS['connect'];

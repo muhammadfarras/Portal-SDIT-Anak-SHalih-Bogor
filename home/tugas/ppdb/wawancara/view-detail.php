@@ -4,6 +4,86 @@
 <div class="time-show" id="time-show">
 
 </div>
+
+
+<div class="detail table-responsive">
+  <?php
+    if ($hasil_kekayaan['result'] == "yes"){
+      
+  ?>
+  <h3>Data Pribadi</h3>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Keterangan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Kepemilikan Rumah</th>
+      <td><?php echo $hasil_kekayaan["ayah"]["kepemilikan_rumah"];?></td>
+    </tr>
+    <tr>
+      <th>Gadget</th>
+      <td><?php echo $hasil_kekayaan["ayah"]["gadget"];?></td>
+    </tr>
+    <tr>
+      <th>Instansi Ayah</th>
+      <td><?php echo $hasil_kekayaan["ayah"]["instansi_ayah"];?></td>
+    </tr>
+    <tr>
+      <th>Pekerjaan Ayah</th>
+      <td><?php echo $hasil_kekayaan["ayah"]["pekerjaan_ayah"];?></td>
+    </tr>
+    <tr>
+      <th>Penghasilan Ayah</th>
+      <td><?php echo $hasil_kekayaan["ayah"]["penghasilan_ayah"];?></td>
+    </tr>
+    
+    <?php
+//    Jika perkejaan ibu bukan ibu rumah tangga
+      if ($hasil_kekayaan["ibu"]["pekerjaan_ibu"] != "Ibu rumah tangga"){
+        
+    
+    ?>
+      <tr>
+       <th>Instansi Ibu</th>
+       <td><?php echo $hasil_kekayaan["ibu"]["instansi_ibu"];?></td>
+      </tr>
+      <tr>
+       <th>Pekerjaan Ibu</th>
+       <td><?php echo $hasil_kekayaan["ibu"]["pekerjaan_ibu"];?></td>
+      </tr>
+      <tr>
+       <th>Penghasilan Ibu</th>
+       <td><?php echo $hasil_kekayaan["ibu"]["penghasilan_ibu"];?></td>
+      </tr>
+    
+    <?php
+      }
+      else {
+        
+    ?>
+      <tr>
+       <th>Pekerjaan Ibu</th>
+       <td><?php echo $hasil_kekayaan["ibu"]["pekerjaan_ibu"];?></td>
+      </tr>
+    
+    <?php
+    
+      }
+    ?>
+  </tbody>
+  
+  <?php
+    }
+    else {
+      echo "<h3>Informasi siswa tidak tersedia</h3>";
+    }
+  ?>
+</table>
+</div>
 <div class="detail" id="detail">
   <h3><?php echo $detail['nama_panjang'] ?></h3>
   <form action="" method="post">

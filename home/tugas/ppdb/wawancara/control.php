@@ -18,6 +18,8 @@
             $namaPanjang = $detail["nama_panjang"];
 
             $hasil_kontribusi = $resultGFAPI->getResultByName($namaPanjang);
+            $hasil_kekayaan = $resultGFAPI->getwealthinessByName($namaPanjang);
+            $hasil_persaudaraan = $resultGFAPI->getSiblingsByName($namaPanjang);
 
             include ("view-detail.php");
         }

@@ -91,6 +91,73 @@ class GravityFormApi {
         return $resultKontribusi;
 
     }
+    
+    function getwealthinessByName($namaInput){
+         // variable that contains result form this function
+        $resultWealthiness = ["result" => "no"];
+
+        //return $this->resultobject->entries[0];
+        foreach ($this->resultobject->entries as $entries)
+        {
+            
+            //print_r ($entries);
+            // Check wether nama is exist or not
+            $namaSiswa = $entries->{'540'}; 
+            //echo $namaSiswa;
+            if ($namaSiswa == $namaInput){
+                $namaAyah = $entries->{'601'};
+                $instansiAyah = $entries->{'641'};
+                $pekerjaanAyah = $entries->{'642'};
+                $penghasilanAyah = $entries->{'897'};
+                $instansiIbu = $entries->{'670'};
+                $pekerjaanIbu = $entries->{'672'};
+                $penghasilanIbu = $entries->{'905'};
+                $kepemilikanRumah = $entries->{'630'};
+                $userAgent = $entries->user_agent;
+                
+                
+                $resultWealthiness["result"] = "yes";
+                preg_match('#\((.*?)\)#', $userAgent, $perangkatGadget);
+                $dataAyah = ["ayah" => ["nama_ayah" => $namaAyah ,"kepemilikan_rumah" => $kepemilikanRumah, "gadget" =>$perangkatGadget[0],
+                                        "instansi_ayah" => $instansiAyah, "pekerjaan_ayah" => $pekerjaanAyah, "penghasilan_ayah" => $penghasilanAyah]];
+                
+                if ($entries->{'674'} == "Ibu Rumah Tangga saja"){
+                    $dataIbu = ["ibu" => ["pekerjaan_ibu" => "Ibu rumah tangga", "penghasilan_ibu" => $penghasilanIbu]];
+                }
+                else {
+                    $dataIbu = ["ibu" => ["instansi_ibu" => $instansiIbu,"pekerjaan_ibu" => $pekerjaanIbu, "penghasilan_ibu" => $penghasilanIbu]];
+                }
+                
+                $resultWealthiness += $dataAyah;
+                $resultWealthiness += $dataIbu;
+            }
+        }
+        return $resultWealthiness;
+    }
+    
+    function getSiblingsByName($namaInput){
+         // variable that contains result form this function
+        $resultSiblings = ["result" => "no"];
+
+        //return $this->resultobject->entries[0];
+        foreach ($this->resultobject->entries as $entries)
+        {
+            // Check wether nama is exist or not
+            $namaSiswa = $entries->{'540'};  
+            if ($namaSiswa == $namaInput){
+                $hasSiblings = $entries->{'869'};
+                 
+                if ($hasSiblings == "Ya"){
+                    $resultSiblings["result"] = "yes";
+                    
+                    $siblings = $entries->{'870'};
+                    $resultSiblings += $siblings;
+                    
+                }
+            }
+        }
+        return $resultSiblings;
+    }
 
 }
 ?>

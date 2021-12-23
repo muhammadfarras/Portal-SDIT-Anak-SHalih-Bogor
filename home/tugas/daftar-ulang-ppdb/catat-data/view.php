@@ -131,7 +131,7 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button id="btnsure" type="button" class="btn btn-success">Simpan</button>
           </div>
-          <smal class="p-3 text-muted">Pastikan data diatas benar, jika sudah diyakini benar tekan tombol berwarna hijau.</small>
+          <small class="p-3 text-muted">Pastikan data diatas benar, jika sudah diyakini benar tekan tombol berwarna hijau.</small>
         </div>
       </div>
     </div>

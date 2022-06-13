@@ -61,18 +61,18 @@ $rows = mysqli_affected_rows ($connect);
 
        // Nilai dari wawancara
          for ($i = 0 ; $i < $rows ; $i++){
-           echo "<td>".$data[3+$i]."</td>";
+           echo "<td>".$data[2+$i]."</td>";
          }
 
+       echo "<td rowspan=2>$data[14]</td>";
        echo "<td rowspan=2>$data[15]</td>";
-       echo "<td rowspan=2>$data[16]</td>";
        echo "</tr>";
 
        echo "<tr>";
 
          for ($i = 0 ; $i < $rows ; $i++){
 
-           echo "<td>".textWan($connect,$data[0])[3+$i]."</td>";
+           echo "<td>".textWan($connect,$data[0])[2+$i]."</td>";
          }
        echo "</tr>";
 

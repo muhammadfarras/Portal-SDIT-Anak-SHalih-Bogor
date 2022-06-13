@@ -26,7 +26,7 @@ function onClick (){
   // create form first
 
   var f = document.createElement('form');
-  f.action='http://192.168.1.201/portal/home/tugas/ppdb/rekap-wawancara/download/output/';
+  f.action='http://192.168.1.25/portal/home/tugas/ppdb/rekap-wawancara/download/output/';
   f.method='POST';
 
   var i=document.createElement('input');

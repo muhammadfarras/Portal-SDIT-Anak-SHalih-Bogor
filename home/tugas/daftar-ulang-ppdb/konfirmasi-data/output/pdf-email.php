@@ -1,7 +1,7 @@
 <?php
 $html = ob_get_clean ();
 // include autoloader
-require_once '../../../../../dompdf/autoload.inc.php';
+require_once '../../../../../vendor/autoload.php';
 
 
 // reference the Dompdf namespace
@@ -23,6 +23,7 @@ $dompdf->render();
 
 // Output the generated PDF to Browser
 // $dompdf->stream("hasil.pdf");
+$dompdf->set_option('isRemoteEnabled', true);
 
 //send to filemanager
 $output = $dompdf->output();

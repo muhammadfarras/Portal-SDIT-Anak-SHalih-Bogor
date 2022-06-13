@@ -2,12 +2,12 @@
 header("Content-type:application/pdf");
 
 $file = $_GET['file'];
-$nama = explode ("-",$_GET['']);
+$nama = explode ("-",$file);
 
 header("Content-Transfer-Encoding: Binary"); 
 
 // It will be called downloaded.pdf
-header('Content-Disposition:attachment;filename="'.$nama[0].".pdf");
+header('Content-Disposition:attachment;filename='.$nama[0].'.pdf');
 
 
 // The PDF source is in original.pdf

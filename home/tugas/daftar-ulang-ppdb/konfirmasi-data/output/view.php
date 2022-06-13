@@ -10,6 +10,24 @@
        }
 
 
+    function encode_img_base64( $img_path = false, $img_type = 'png' ){
+        if( $img_path ){
+            //convert image into Binary data
+            $img_data = fopen ( $img_path, 'rb' );
+            $img_size = filesize ( $img_path );
+            $binary_image = fread ( $img_data, $img_size );
+            fclose ( $img_data );
+    
+            //Build the src string to place inside your img tag
+            $img_src = "data:image/".$img_type.";base64,".str_replace ("\n", "", base64_encode($binary_image));
+    
+            return $img_src;
+        }
+    
+        return false;
+    }
+
+
     // check apakah barcode tersebut bertipe png atau selainnya
     // lakukan while selama check bukan png
 
@@ -104,7 +122,7 @@
                         <hr>
                         <ul>
                             <li>Seleksi Penerimaan Peserta Didik Baru SDIT Anak Shalih Bogor <i>Islamic School</i> terdiri dari psikotest, Simulasi Pembelajaran, & Wawancara Calon Orangtua Siswa serta Test Potensi Akademik (<b>Khusus Siswa Pindahan</b>).</li>
-                            <li>Calon siswa dan orangtua wajib hadir dalam seleksi siswa tersebut pada hari <?php echo $waktuTest; ?> pukul 09.00 WIB di SDIT Anak Shalih Bogor <i>Islamic School</i>.
+                            <li>Calon siswa dan orangtua wajib hadir dalam seleksi siswa tersebut pada hari <?php echo $waktuTest; ?> pukul 07.30 WIB di SDIT Anak Shalih Bogor <i>Islamic School</i>.
                             <b>Mohon dapat hadir tepat waktu karena tidak ada perpanjangan waktu bagi calon siswa yang terlambat</b></li>
                         </ul>
                         <ul>
@@ -195,8 +213,10 @@
 
                         <!-- <?php $fullKode = $data['nama'].'-'.$noPeserta; ?> -->
                         <!-- <img class="mt-3" src="<?php echo 'imageqr.php?id=123123'?>"> -->
-
-                        <img class="mt-3" src="<?php echo 'imageqr/'.$fileStroge.'.png'?>">
+                        <!-- <?php echo 'imageqr/'.$fileStroge.'.png'?> -->
+                        <img class="mt-3" src="<?php echo encode_img_base64('imageqr/'.$fileStroge.'.png');?>">
+                        <!-- <img class="mt-3" src="<?php echo 'http://192.168.1.25/portal/home/tugas/daftar-ulang-ppdb/konfirmasi-data/output/imageqr/7d90c831e52e24bdb541da190cc1a5be.png'?>"> -->
+                        
                         <br>
                         <span>Panitia PPDB SDIT Anak Shalih Bogor</span>
                         <br>

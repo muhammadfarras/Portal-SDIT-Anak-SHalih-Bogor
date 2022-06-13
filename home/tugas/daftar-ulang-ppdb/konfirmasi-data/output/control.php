@@ -85,6 +85,14 @@ if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
             $waktuTest = "Jum'at, 17 Desember 2021";
             break;
 
+            case 'XI':
+              $waktuTest = "Jum'at, 17 Desember 2021";
+              break;
+
+            case 'XII':
+              $waktuTest = "Sabtu, 21 Mei 2022";
+              break;
+
 
             default:
               print_r (json_encode(array("status"=>"0","text"=>"No Kelompok Salah")));

@@ -304,7 +304,7 @@ $mail->addCC ($data['email_ibu']);
 $mail->isHTML(true);
 
 //Provide file path and name of the attachments
-$mail->addAttachment("file/".$data['nama']."-".$fileStroge.".pdf",$data['nama']."pdf");
+$mail->addAttachment("file/".$data['nama']."-".$fileStroge.".pdf",$data['nama'].".pdf");
 //Filename is optional
 
 

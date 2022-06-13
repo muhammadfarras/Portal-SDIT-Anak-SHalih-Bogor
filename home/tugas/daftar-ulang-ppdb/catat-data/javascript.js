@@ -80,11 +80,14 @@ else {
 }
 
 function runAjax () {
+  
 
   var arr = [inputNama.value,inputNamaAyah.value,inputemailayah.value,inputHpAyah.value,inputNamaIbu.value,inputEmailIbu.value,inputHpIbu.value];
   var namaUpdate = arr[0];
   arr = JSON.stringify (arr);
+  console.log (arr)
   var xmlhttp = new XMLHttpRequest();
+  console.log (xmlhttp);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 
@@ -109,6 +112,7 @@ function runAjax () {
   };
   xmlhttp.open("GET", "post.php?data=" + arr, true);
   xmlhttp.send();
+  console.log ("oke")
 }
 
 

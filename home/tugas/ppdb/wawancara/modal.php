@@ -6,7 +6,7 @@
     /* Variable untuk tahun pelajaran
      *-------------------------------
     */
-    $tp = "2022-2023"; // Tahun pelajaran
+    $tp = $_ENV["tahun_ppdb"]; // Tahun pelajaran
 
     /*
      *---------------------------

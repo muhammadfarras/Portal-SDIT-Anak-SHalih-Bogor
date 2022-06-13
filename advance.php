@@ -1,5 +1,10 @@
 <?php
 ob_start();
+// adding php dot env
+require ("vendor/autoload.php");
+// echo (__DIR__."/vendor");
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 /*
  * ---------------------------------------------------
  *
@@ -9,12 +14,11 @@ ob_start();
  *
  * ---------------------------------------------------
 */
-
 // create for object mysql
-$host = "localhost";
-$username = "root";
-$pass = "";
-$dbname = "base";
+$host = $_ENV["host"];
+$username = $_ENV["user_name"];
+$pass = $_ENV["pass"];
+$dbname = $_ENV["db_name"];
 
 function connectDb (){
     $host = $GLOBALS['host'];

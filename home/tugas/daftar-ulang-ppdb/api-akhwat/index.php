@@ -2,7 +2,8 @@
 require ("../../../../advance.php");
 
 // $query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2022-2023' AND jenis_kelamin = 'Akhwat'  AND groupId = ''";
-$query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2022-2023' AND jenis_kelamin = 'Akhwat'";
+$tp = $_ENV["tahun_ppdb"];
+$query = "SELECT * FROM `ppdb_peserta` WHERE tp = '$tp' AND jenis_kelamin = 'Akhwat'";
 $mysqliQuery = mysqli_query ($connect,$query);
 
 $arrayName = array();

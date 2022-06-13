@@ -6,7 +6,8 @@ if (isset($_GET)){
 
     $noPeserta = $_GET['no_peserta'];
     // $query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2022-2023' AND no_peserta = '$noPeserta' AND groupId = ''" ;
-    $query = "SELECT * FROM `ppdb_peserta` WHERE tp = '2022-2023' AND no_peserta = '$noPeserta'" ;
+    $tp = $_ENV["tahun_ppdb"];
+    $query = "SELECT * FROM `ppdb_peserta` WHERE tp = '$tp' AND no_peserta = '$noPeserta'" ;
     $mysqliQuery = mysqli_query ($connect,$query);
 
     $arrayName = array();

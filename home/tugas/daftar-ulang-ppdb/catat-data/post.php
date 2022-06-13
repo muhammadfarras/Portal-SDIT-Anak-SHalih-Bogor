@@ -9,7 +9,8 @@ $result = setGoodMysqli ($myArray);
 
 // save to mysqli
 // print_r ($result);
-$data = new DataBaseUpdate ($result,"2022-2023",$connect);
+$tp = $_ENV["tahun_ppdb"];
+$data = new DataBaseUpdate ($result,$tp,$connect);
 
 if ($data->saveToDb()){
   echo "berhasil";

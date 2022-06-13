@@ -1,6 +1,6 @@
 <?php
 /*----------------------*/
-$tp = "2022-2023";
+$tp = $_ENV["tahun_ppdb"];
 /*----------------------*/
     function callPerserta () {
         $connect = $GLOBALS['connect'];

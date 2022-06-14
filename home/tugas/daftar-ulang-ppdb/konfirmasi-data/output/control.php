@@ -8,7 +8,7 @@ include ("modal.php");
 if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
 
   /*--------------*/
-  $tp = $_ENV["tahun_ppdb"];
+  $tp_check = $_ENV["tahun_ppdb_check"];
   /*--------------*/
   // array nama peserta
     $noPeserta = $_GET['no_peserta'];
@@ -108,7 +108,7 @@ if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
           exit();
         }
 
-        if ($arrNoPeserta[3] !== $tp) {
+        if ($arrNoPeserta[3] !== $tp_check) {
           print_r (json_encode(array("status"=>"0","text"=>"Kode peserta salah Pada tahun")));
           exit();
         }

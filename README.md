@@ -6,9 +6,24 @@ _Bismillah, segala puji hanya milik ALlah, tuhan satu-satunya yang berhak disemb
 ## Konfigurasi awal
 Buatlah sebuah folder dengan nama .env pada root folder dan iskan nilai berikut
 ```
-email = "alamat_email_anda@address.com"
-pass_email = "password_email"
-tahun_ppdb= "Tahun ppdb"
+# Config DB
+host = "host_anda"
+user_name = "uname_anda"
+pass = "password_anda"
+db_name = "db_name_anda"
+
+# Config PPDB DB
+tahun_ppdb = "2023-2024"
+
+# Tahun ppdb check
+tahun_ppdb_check = "2023/2024"
+
+apakah_kelompok = "tidak"  
+# diisi yes atau tidak
+
+# config email
+email = "email_anda"
+password = "password_anda"
 ```
 
 ## Daftar Aplikasi

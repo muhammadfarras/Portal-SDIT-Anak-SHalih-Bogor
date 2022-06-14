@@ -32,7 +32,7 @@ switch ($type) {
       $id = $_GET['id'];
       $myArray = json_decode ($_GET['data']);
       $result = setGoodMysqli ($myArray);
-      $data = new DataBaseUpdate ($result,"2021-2022",$connect);
+      $data = new DataBaseUpdate ($result,$_ENV["tahun_ppdb"],$connect);
 
       if ($data->isDbupdated($id)){
         echo "berhasil";

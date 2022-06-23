@@ -122,7 +122,7 @@
                         <hr>
                         <ul>
                             <li>Seleksi Penerimaan Peserta Didik Baru SDIT Anak Shalih Bogor <i>Islamic School</i> terdiri dari psikotest, Simulasi Pembelajaran, & Wawancara Calon Orangtua Siswa serta Test Potensi Akademik (<b>Khusus Siswa Pindahan</b>).</li>
-                            <li>Calon siswa dan orangtua wajib hadir dalam seleksi siswa tersebut pada hari <?php echo $waktuTest; ?> pukul 07.30 WIB di SDIT Anak Shalih Bogor <i>Islamic School</i>.
+                            <li>Calon siswa dan orangtua wajib hadir dalam seleksi siswa tersebut pada hari <?php echo $waktuTest; ?> pukul <?php echo $_ENV["jam_waktu_ppdb"]; ?> WIB di SDIT Anak Shalih Bogor <i>Islamic School</i>.
                             <b>Mohon dapat hadir tepat waktu karena tidak ada perpanjangan waktu bagi calon siswa yang terlambat</b></li>
                         </ul>
                         <ul>

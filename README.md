@@ -24,6 +24,37 @@ apakah_kelompok = "tidak"
 # config email
 email = "email_anda"
 password = "password_anda"
+
+# Jam Waktu PPDB
+jam_waktu_ppdb = "07.30"
+
+# Hari waktu test - tidak kelompok
+#-------------------------------------
+# Jika pilihan dari apakah_kelompok
+# adalah tidak, maka tanggal test 
+# dibawah ini yang digunakan
+#------------------------------------
+waktu_test_tdk_kelompok = "Hari, Tanggal"
+
+
+# Hari waktu test - dengan kelompok
+#-------------------------------------
+# Jika pilihan dari apakah_kelompok
+# adalah yes, maka tanggal test 
+# dibawah ini yang digunakan
+#------------------------------------
+waktu_test_kelompok_1 = "Hari, Tanggal"
+waktu_test_kelompok_2 = "Hari, Tanggal"
+waktu_test_kelompok_3 = "Hari, Tanggal"
+waktu_test_kelompok_4 = "Hari, Tanggal"
+waktu_test_kelompok_5 = "Hari, Tanggal"
+waktu_test_kelompok_6 = "Hari, Tanggal"
+waktu_test_kelompok_7 = "Hari, Tanggal"
+waktu_test_kelompok_8 = "Hari, Tanggal"
+waktu_test_kelompok_9 = "Hari, Tanggal"
+waktu_test_kelompok_10 = "Hari, Tanggal"
+waktu_test_kelompok_11 = "Hari, Tanggal"
+waktu_test_kelompok_12 = "Hari, Tanggal"
 ```
 
 ## Daftar Aplikasi

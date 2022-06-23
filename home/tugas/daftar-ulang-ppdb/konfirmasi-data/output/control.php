@@ -38,51 +38,51 @@ if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
   
           switch ($arrNoPeserta [4]) {
             case 'I':
-              $waktuTest = "Senin, 13 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_1'];
             break;
   
             case 'II':
-            $waktuTest = "Senin, 13 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_2'];
             break;
   
             case 'III':
-              $waktuTest = "Selasa, 14 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_3'];
             break;
   
             case 'IV':
-              $waktuTest = "Selasa, 14 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_4'];
             break;
   
             case 'V':
-            $waktuTest = "Rabu, 15 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_5'];
             break;
   
             case 'VI':
-            $waktuTest = "Rabu, 15 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_6'];
             break;
   
             case 'VII':
-            $waktuTest = "Kamis, 16 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_7'];
             break;
   
             case 'VIII':
-            $waktuTest = "Kamis, 16 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_8'];
             break;
   
             case 'IX':
-            $waktuTest = "Jum'at, 17 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_9'];
             break;
   
             case 'X':
-            $waktuTest = "Jum'at, 17 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_10'];
             break;
   
             case 'XI':
-              $waktuTest = "Jum'at, 17 Desember 2021";
+              $waktuTest = $_ENV['waktu_test_kelompok_11'];
               break;
   
             case 'XII':
-              $waktuTest = "Sabtu, 21 Mei 2022";
+              $waktuTest = $_ENV['waktu_test_kelompok_12'];
               break;
   
   
@@ -99,6 +99,8 @@ if (!empty($_GET['no_id']) && isset ($_GET['no_id'])){
             print_r (json_encode(array("status"=>"0","text"=>"Kode peserta salah tolong ikuti pola yang benar.")));
             exit();
           }
+
+          $waktuTest = $_ENV['waktu_test_tdk_kelompok'];
         }
         
 

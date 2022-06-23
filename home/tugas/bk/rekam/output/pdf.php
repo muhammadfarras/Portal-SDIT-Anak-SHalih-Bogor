@@ -3,7 +3,7 @@
     $html = ob_get_clean ();
 
     // include autoloader
-    require_once '../../../../../dompdf/autoload.inc.php';
+    require_once '../../../../../vendor/autoload.php';
 
 
     // reference the Dompdf namespace
